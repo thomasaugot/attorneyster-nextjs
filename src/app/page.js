@@ -1,3 +1,7 @@
 export default function Home() {
-  return <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>;
+  return (
+    <main className="bg-black p-20">
+      <h1 className="text-white">Hellloooooooooo!!!</h1>
+    </main>
+  );
 }
