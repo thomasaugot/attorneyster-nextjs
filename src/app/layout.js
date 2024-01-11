@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
+import { Header } from "./components/Header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,10 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="icon" href="./icon.png" sizes="any" />
       </Head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-darkBlue`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
