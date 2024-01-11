@@ -23,7 +23,7 @@ export const Cart = () => {
     <div className="flex items-center justify-between px-6">
       <Image src={cart} width={20} height={20} alt="logo" />
       <div className="flex items-center justify-between">
-        <h2 className="text-base font-outfit font-thin	">&nbsp;&nbsp;Cart&nbsp;</h2>
+        <h2 className="text-base font-outfit font-thin ">&nbsp;&nbsp;Cart&nbsp;</h2>
         <p>({cartItems.length})</p>
       </div>
     </div>
