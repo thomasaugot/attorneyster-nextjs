@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="/public/img/misc/logo.svg" type="image/svg+xml" />
+        <link rel="icon" href="./icon.png" sizes="any" />
       </Head>
       <body className={inter.className}>{children}</body>
     </html>
