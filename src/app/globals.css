@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "cormorant";
+  src: url("/public/assets/fonts/CormorantGaramond-Regular.ttf");
+}
+
+@font-face {
+  font-family: "outfit";
+  src: url("/public/assets/fonts/Outfit-Regular.ttf");
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-white text-8xl font-cormorant leading-[114.6%];
+  }
+
+  p {
+    @apply text-gray-300 font-outfit text-base font-normal leading-7;
+  }
+}
