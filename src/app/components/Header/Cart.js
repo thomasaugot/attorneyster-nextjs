@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import cart from "/public/assets/img/misc/cart.svg";
+import cart from "/src/assets/img/misc/cart.svg";
 import Image from "next/image";
 
 export const Cart = () => {

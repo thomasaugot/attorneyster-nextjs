@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import logo from "/public/assets/img/misc/logo-full.svg";
-import callus from "/public/assets/img/misc/callus.svg";
-import emailus from "/public/assets/img/misc/emailus.svg";
+import logo from "/src/assets/img/misc/logo-full.svg";
+import callus from "/src/assets/img/misc/callus.svg";
+import emailus from "/src/assets/img/misc/emailus.svg";
 import Link from "next/link";
 import Cart from "./Cart";
 import { IoChevronDown } from "react-icons/io5";

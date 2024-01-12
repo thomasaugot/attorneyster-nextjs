@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="./icon.png" sizes="any" />
+        <link rel="icon" href="../assets/img/misc/icon.png" sizes="any" />
       </Head>
       <body className={`${inter.className} bg-darkBlue`}>
         <Header />
