@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         <link rel="icon" href="../assets/img/misc/icon.png" sizes="any" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body className={`${inter.className} bg-darkBlue`}>
         <Header />

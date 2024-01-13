@@ -31,10 +31,10 @@ body {
   h4,
   h5,
   h6 {
-    @apply text-white text-8xl font-cormorant leading-[114.6%];
+    @apply text-cream font-cormorant;
   }
 
   p {
-    @apply text-gray-300 font-outfit text-base font-normal leading-7;
+    @apply text-gray-300 font-outfit;
   }
 }
