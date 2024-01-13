@@ -12,7 +12,7 @@ export const Header = () => {
   const toggleSubMenu = () => {};
 
   return (
-    <div className="absolute w-[100vw] px-24 py-8 ">
+    <div className="absolute w-[100vw] px-24 py-8 z-10">
       <div className="flex items-center justify-between">
         <Link href={"/"}>
           <Image src={logo} width={250} height={79} alt="logo" />
