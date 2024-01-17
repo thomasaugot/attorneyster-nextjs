@@ -19,7 +19,7 @@ export const Header = () => {
         </Link>
         <div className="flex items-center">
           <Cart />
-          <Link href={"/"} className="font-outfit p-4 text-cream bg-cyan">
+          <Link href={"/"} className="font-outfit p-4 text-cream transparent-button hover:scale-90">
             Book a Consultation
           </Link>
         </div>
@@ -31,7 +31,7 @@ export const Header = () => {
         <nav className="flex items-center">
           <Link
             href={"/"}
-            className="font-outfit text-cream mx-6 hover:underline underline-offset-4"
+            className="font-outfit text-cream mr-6 hover:underline underline-offset-4"
           >
             Home
           </Link>
