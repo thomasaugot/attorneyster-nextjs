@@ -1,18 +1,73 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
-import banner from "/src/assets/img/homepage/banner-main.svg";
+import Link from "next/link";
+
+import ServiceItem from "@/components/ServiceItem";
+
+import banner from "/src/assets/img/homepage/banner-main.webp";
 import separator from "/src/assets/img/misc/separator.svg";
 import illustration1 from "/src/assets/img/homepage/illustration-1.svg";
 import illustration2 from "/src/assets/img/homepage/illustration-2.svg";
 import peterpark from "/src/assets/img/homepage/peter-park.svg";
 import caseFinish from "/src/assets/img/homepage/case-finish.svg";
 import experienceX35 from "/src/assets/img/homepage/35yexperience.svg";
-import Link from "next/link";
+import iconBuilding from "/src/assets/img/homepage/icon-buildings.svg";
+import iconSuitcase from "/src/assets/img/homepage/icon-suitcase.svg";
+import iconTruck from "/src/assets/img/homepage/icon-truck.svg";
+import iconGrave from "/src/assets/img/homepage/icon-grave.svg";
+import iconHandCuffs from "/src/assets/img/homepage/icon-handcuffs.svg";
+import iconFamily from "/src/assets/img/homepage/icon-family.svg";
 
 export default function Home() {
+  const expertiseAreas = [
+    {
+      index: 1,
+      title: "Business Law",
+      text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
+      icon: iconSuitcase,
+    },
+    {
+      index: 2,
+      title: "Construction Law",
+      text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
+      icon: iconBuilding,
+    },
+    {
+      index: 3,
+      title: "Car Accident",
+      text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
+      icon: iconTruck,
+    },
+    {
+      index: 4,
+      title: "Wrongful Death",
+      text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
+      icon: iconGrave,
+    },
+    {
+      index: 5,
+      title: "Criminal Law",
+      text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
+      icon: iconHandCuffs,
+    },
+    {
+      index: 6,
+      title: "Family Law",
+      text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
+      icon: iconFamily,
+    },
+  ];
+
   return (
     <main className="relative">
-      <Image src={banner} width={"100vw"} height={"auto"} alt="logo" className="z-0" />
+      <Image
+        src={banner}
+        width={"100vw"}
+        height={"auto"}
+        alt="logo"
+        className="z-0"
+        priority={true}
+      />
       <section className="z-10 absolute top-[300px] left-[210px] flex flex-col max-w-[560px]">
         <Image src={separator} width={"50px"} height={"auto"} alt="separator" />
         <h1 className="text-6xl leading-[114%] my-3 capitalize">
@@ -80,6 +135,34 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="h-full bg-nightBlue py-[15vh] px-[15vh]">
+        <div className="max-w-[80vw] mx-auto flex justify-between items-center">
+          <div className="flex flex-col justify-center gap-4">
+            <h1 className="text-[40px]">
+              Explore <br /> Our Practice Areas
+            </h1>
+            <Image
+              src={separator}
+              width={"50px"}
+              height={"auto"}
+              alt="separator"
+              className="mr-[50px]"
+            />
+          </div>
+          <div className="w-[0.5px] h-[105px] bg-white opacity-40"></div>
+          <p className="w-[50%]">
+            There are <span className="text-camel">many variations of passages</span> of Lorem Ipsum
+            available, but the majority have su alteration in some form, by injected humour, oir
+            <span className="text-camel"> randomised workds</span> which don't look even slightly
+            believable.
+          </p>
+        </div>
+        <div className="flex flex-wrap w-full h-full gap-6 justify-center my-12">
+          {expertiseAreas.map((item, index) => (
+            <ServiceItem key={index} item={item} />
+          ))}
         </div>
       </section>
     </main>
