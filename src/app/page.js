@@ -1,6 +1,11 @@
+"use client";
+
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 import ServiceItem from "@/components/ServiceItem";
 
@@ -26,6 +31,7 @@ import vintageInterior from "/src/assets/img/homepage/vintageinterior-logo.svg";
 import brand from "/src/assets/img/homepage/brand-logo.svg";
 import natureHome from "/src/assets/img/homepage/naturehome-logo.svg";
 import classicDesign from "/src/assets/img/homepage/classic-design-logo.svg";
+import bgIllustration1 from "/src/assets/img/homepage/bg-illu-1.svg";
 
 export default function Home() {
   const expertiseAreas = [
@@ -66,6 +72,28 @@ export default function Home() {
       icon: iconFamily,
     },
   ];
+
+  const variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      delay: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setIsVisible(true);
+    }
+  }, [inView]);
 
   return (
     <main className="relative">
@@ -146,7 +174,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="h-full bg-nightBlue py-[15vh] px-[15vh]">
+      <section className="h-full bg-nightBlue py-[15vh] px-[15vh]" ref={ref}>
         <div className="max-w-[80vw] mx-auto flex justify-between items-center">
           <div className="flex flex-col justify-center gap-4">
             <h1 className="text-[40px]">
@@ -168,11 +196,19 @@ export default function Home() {
             believable.
           </p>
         </div>
-        <div className="flex flex-wrap w-full h-full gap-6 justify-center my-12">
-          {expertiseAreas.map((item, index) => (
-            <ServiceItem key={index} item={item} />
-          ))}
-        </div>
+        {isVisible && (
+          <motion.div
+            variants={variants}
+            initial="hidden"
+            viewport={{ once: true }}
+            animate="show"
+            className="flex flex-wrap w-full h-full gap-6 justify-center my-12"
+          >
+            {expertiseAreas.map((item, index) => (
+              <ServiceItem key={index} item={item} />
+            ))}
+          </motion.div>
+        )}
       </section>
       <section className="h-full bg-cream py-[15vh] px-[15vh]">
         <div>
@@ -261,6 +297,14 @@ export default function Home() {
             />
           </div>
         </div>
+      </section>
+      <section className="h-full py-[15vh] px-[15vh] relative">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${bgIllustration1})`,
+          }}
+        ></div>
       </section>
     </main>
   );
