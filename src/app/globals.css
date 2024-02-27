@@ -55,3 +55,7 @@ body {
 .white-button {
   @apply bg-cream transition-transform transform duration-100 scale-100 hover:scale-95;
 }
+
+.dropshadow {
+  filter: drop-shadow(4px 0px 4px 0px #000000);
+}
