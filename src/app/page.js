@@ -36,6 +36,11 @@ import balanceStatue from "/src/assets/img/homepage/balance-statue.svg";
 import diagram75 from "/src/assets/img/homepage/diagram75.png";
 import diagram80 from "/src/assets/img/homepage/diagram80.png";
 import diagram90 from "/src/assets/img/homepage/diagram90.png";
+import quotes from "/src/assets/img/homepage/quotes.svg";
+import nattascha from "/src/assets/img/homepage/nattasha.svg";
+import minciPall from "/src/assets/img/homepage/minci.svg";
+import juliaRose from "/src/assets/img/homepage/julia.svg";
+import johnDavid from "/src/assets/img/homepage/john.svg";
 
 export default function Home() {
   const expertiseAreas = [
@@ -302,7 +307,7 @@ export default function Home() {
                 variants={partnerVariants}
                 initial="hidden"
                 animate="show"
-                className="flex w-full justify-around my-8"
+                className="flex w-full justify-around my-8 items-center"
               >
                 {partners.map((item, id) => (
                   <motion.div
@@ -442,6 +447,84 @@ export default function Home() {
                 </div>
                 <div className="camel-button">Free Consulting</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-darkBlue px-[10vw] py-[15vh] flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-4xl mb-4">Client Opinions & Reviews</h1>
+          <Image
+            src={separatorCentered}
+            width={"50px"}
+            height={"auto"}
+            alt="separator"
+            className="mb-12"
+          />
+        </div>
+        <div className="flex justify-between gap-4 w-full">
+          <div className="flex flex-col gap-4 w-1/4">
+            <div className="bg-cyan py-10 px-8 rounded-bl-[40px]">
+              <Image src={quotes} width={"auto"} height={"auto"} alt="quotes" className="mb-6" />
+              <p>
+                There are of Lorem Ipsum available, but the majority have su alteration in some
+                form, by injected oir which don't look even slightly believable.
+              </p>
+            </div>
+            <div className="flex gap-4 items-center">
+              <Image src={nattascha} width={"auto"} height={"auto"} alt="portait" />
+              <div className="flex flex-col">
+                <h1 className="text-[30px]">Nattasha</h1>
+                <p className="text-lg">Junior Lawyer</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 w-1/4">
+            <div className="flex gap-4 items-center">
+              <Image src={minciPall} width={"auto"} height={"auto"} alt="portait" />
+              <div className="flex flex-col">
+                <h1 className="text-[30px]">Minci pall</h1>
+                <p className="text-lg">Consultant</p>
+              </div>
+            </div>
+            <div className="bg-cyan py-10 px-8 rounded-tl-[40px]">
+              <Image src={quotes} width={"auto"} height={"auto"} alt="quotes" className="mb-6" />
+              <p>
+                There are of Lorem Ipsum available, but the majority have su alteration in some
+                form, by injected oir which don't look even slightly believable.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 w-1/4">
+            <div className="bg-cyan py-10 px-8 rounded-bl-[40px]">
+              <Image src={quotes} width={"auto"} height={"auto"} alt="quotes" className="mb-6" />
+              <p>
+                There are of Lorem Ipsum available, but the majority have su alteration in some
+                form, by injected oir which don't look even slightly believable.
+              </p>
+            </div>
+            <div className="flex gap-4 items-center">
+              <Image src={juliaRose} width={"auto"} height={"auto"} alt="portait" />
+              <div className="flex flex-col">
+                <h1 className=" text-[30px]">Julia Rose</h1>
+                <p className="text-lg">Consultant</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 w-1/4">
+            <div className="flex gap-4 items-center">
+              <Image src={johnDavid} width={"auto"} height={"auto"} alt="portait" />
+              <div className="flex flex-col">
+                <h1 className=" text-[30px]">John David</h1>
+                <p className="text-lg">Designer</p>
+              </div>
+            </div>
+            <div className="bg-cyan py-10 px-8 rounded-tl-[40px]">
+              <Image src={quotes} width={"auto"} height={"auto"} alt="quotes" className="mb-6" />
+              <p>
+                There are of Lorem Ipsum available, but the majority have su alteration in some
+                form, by injected oir which don't look even slightly believable.
+              </p>
             </div>
           </div>
         </div>
