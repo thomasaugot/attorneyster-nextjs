@@ -325,7 +325,7 @@ export default function Home() {
           className="absolute inset-0 flex justify-center items-center bg-cover bg-center z-0"
           style={{ backgroundImage: `url(${bgIllustration1.src})` }}
         >
-          <div className="flex justify-between gap-10 absolute mx-auto my-auto z-10 bg-darkBlue/65 px-12 py-24 ">
+          <div className="flex justify-between gap-10 absolute mx-auto my-auto z-10 bg-darkBlue/85 px-12 py-24 ">
             <div className="w-[370px] h-[758px]">
               <h1 className="text-4xl mb-4">We Are Top Lawyers And History</h1>
               <Image
