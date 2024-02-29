@@ -41,19 +41,19 @@ body {
 }
 
 .camel-button {
-  @apply transition-transform transform duration-100 scale-100 hover:scale-95 font-medium my-[23px] bg-camel w-[255px] h-[55px] flex items-center justify-center capitalize;
+  @apply cursor-pointer transition-transform transform duration-100 scale-100 hover:scale-95 font-medium my-[23px] bg-camel w-[255px] h-[55px] flex items-center justify-center capitalize;
 }
 
 .small-blue-button {
-  @apply transition-transform transform duration-100 scale-100 hover:scale-95 font-medium text-white bg-nightBlue w-[155px] h-[45px] flex items-center justify-center capitalize;
+  @apply cursor-pointer transition-transform transform duration-100 scale-100 hover:scale-95 font-medium text-white bg-nightBlue w-[155px] h-[45px] flex items-center justify-center capitalize;
 }
 
 .dark-button {
-  @apply bg-darkBlue transition-transform transform duration-100 scale-100 hover:scale-95;
+  @apply cursor-pointer bg-darkBlue transition-transform transform duration-100 scale-100 hover:scale-95;
 }
 
 .white-button {
-  @apply bg-cream transition-transform transform duration-100 scale-100 hover:scale-95;
+  @apply cursor-pointer bg-cream transition-transform transform duration-100 scale-100 hover:scale-95;
 }
 
 .dropshadow {

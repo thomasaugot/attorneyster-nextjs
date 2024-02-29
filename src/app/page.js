@@ -3,7 +3,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
@@ -32,45 +32,57 @@ import brand from "/src/assets/img/homepage/brand-logo.svg";
 import natureHome from "/src/assets/img/homepage/naturehome-logo.svg";
 import classicDesign from "/src/assets/img/homepage/classic-design-logo.svg";
 import bgIllustration1 from "/src/assets/img/homepage/bg-illu-1.svg";
+import balanceStatue from "/src/assets/img/homepage/balance-statue.svg";
+import diagram75 from "/src/assets/img/homepage/diagram75.png";
+import diagram80 from "/src/assets/img/homepage/diagram80.png";
+import diagram90 from "/src/assets/img/homepage/diagram90.png";
 
 export default function Home() {
   const expertiseAreas = [
     {
-      index: 1,
+      id: 1,
       title: "Business Law",
       text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
       icon: iconSuitcase,
     },
     {
-      index: 2,
+      id: 2,
       title: "Construction Law",
       text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
       icon: iconBuilding,
     },
     {
-      index: 3,
+      id: 3,
       title: "Car Accident",
       text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
       icon: iconTruck,
     },
     {
-      index: 4,
+      id: 4,
       title: "Wrongful Death",
       text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
       icon: iconGrave,
     },
     {
-      index: 5,
+      id: 5,
       title: "Criminal Law",
       text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
       icon: iconHandCuffs,
     },
     {
-      index: 6,
+      id: 6,
       title: "Family Law",
       text: "There are many variations of passages of Lorem Ipsum available, but majority going to use a passage.",
       icon: iconFamily,
     },
+  ];
+
+  const partners = [
+    { id: 1, source: modernHome },
+    { id: 2, source: vintageInterior },
+    { id: 3, source: brand },
+    { id: 4, source: natureHome },
+    { id: 5, source: classicDesign },
   ];
 
   const variants = {
@@ -84,16 +96,41 @@ export default function Home() {
     },
   };
 
-  const [isVisible, setIsVisible] = useState(false);
-  const { ref, inView } = useInView({
+  const partnerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 2,
+      },
+    },
+  };
+
+  const [isExpertiseVisible, setIsExpertiseVisible] = useState(false);
+  const [isPartnersVisible, setIsPartnersVisible] = useState(false);
+
+  const { ref: expertiseRef, inView: expertiseInView } = useInView({
+    threshold: 0.2,
+  });
+
+  const { ref: partnersRef, inView: partnersInView } = useInView({
     threshold: 0.2,
   });
 
   useEffect(() => {
-    if (inView) {
-      setIsVisible(true);
+    if (expertiseInView) {
+      setIsExpertiseVisible(true);
     }
-  }, [inView]);
+  }, [expertiseInView]);
+
+  useEffect(() => {
+    if (partnersInView) {
+      setIsPartnersVisible(true);
+    }
+  }, [partnersInView]);
 
   return (
     <main className="relative">
@@ -174,7 +211,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="h-full bg-nightBlue py-[15vh] px-[15vh]" ref={ref}>
+      <section className="h-full bg-nightBlue py-[15vh] px-[15vh]" ref={expertiseRef}>
         <div className="max-w-[80vw] mx-auto flex justify-between items-center">
           <div className="flex flex-col justify-center gap-4">
             <h1 className="text-[40px]">
@@ -196,7 +233,7 @@ export default function Home() {
             believable.
           </p>
         </div>
-        {isVisible && (
+        {isExpertiseVisible && (
           <motion.div
             variants={variants}
             initial="hidden"
@@ -229,14 +266,14 @@ export default function Home() {
         </div>
         <div className="flex justify-between gap-5">
           <div className="flex bg-darkWhite p-[30px] gap-4 w-1/3">
-            <Image src={trustedClients} width={90} height={20} alt="chart illustration" />
+            <Image src={trustedClients} width={"auto"} height={"auto"} alt="chart illustration" />
             <div className="flex flex-col justify-center">
               <h2 className="text-black text-2xl text-nowrap">Trusted Clients</h2>
               <p className="text-black">There are of Lorem Ipsum</p>
             </div>
           </div>
           <div className="flex bg-darkWhite p-[30px] gap-4 w-1/3">
-            <Image src={successfulCases} width={90} height={20} alt="chart illustration" />
+            <Image src={successfulCases} width={"auto"} height={"auto"} alt="chart illustration" />
             <div className="flex flex-col justify-center">
               <h2 className="text-black text-2xl text-nowrap">Successful Cases</h2>
               <p className="text-black">There are of Lorem Ipsum</p>
@@ -254,57 +291,160 @@ export default function Home() {
         </div>
         <div className="bg-black/25 m-12 w-full h-[0.5px] mx-auto"></div>
         <div>
-          <div className="flex justify-center gap-5">
+          <div className="flex justify-center gap-5" ref={partnersRef}>
             <Image src={separatorCentered} width={"50px"} height={"auto"} alt="separator" />
             <h1 className="text-black text-4xl flex w-[20vw] text-center">Meet The Partners</h1>
             <Image src={separatorCentered} width={"50px"} height={"auto"} alt="separator" />
           </div>
-          <div className="flex w-full justify-around my-8">
-            <Image
-              src={modernHome}
-              width={"50px"}
-              height={"auto"}
-              alt="separator"
-              className="mr-[50px] "
-            />
-            <Image
-              src={vintageInterior}
-              width={"50px"}
-              height={"auto"}
-              alt="separator"
-              className="mr-[50px] "
-            />
-            <Image
-              src={brand}
-              width={"50px"}
-              height={"auto"}
-              alt="separator"
-              className="mr-[50px] "
-            />
-            <Image
-              src={natureHome}
-              width={"50px"}
-              height={"auto"}
-              alt="separator"
-              className="mr-[50px] "
-            />
-            <Image
-              src={classicDesign}
-              width={"50px"}
-              height={"auto"}
-              alt="separator"
-              className="mr-[50px] "
-            />
+          <div className="flex w-full justify-around mt-8">
+            {isPartnersVisible && (
+              <motion.div
+                variants={partnerVariants}
+                initial="hidden"
+                animate="show"
+                className="flex w-full justify-around my-8"
+              >
+                {partners.map((item, id) => (
+                  <motion.div
+                    key={id}
+                    variants={partnerVariants}
+                    initial="hidden"
+                    animate="show"
+                    className="mr-[50px]"
+                  >
+                    <Image src={item.source} width={"50px"} height={"auto"} alt="partner" />
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
           </div>
         </div>
       </section>
-      <section className="h-full py-[15vh] px-[15vh] relative">
+      <section className="h-[180vh] py-[15vh] px-[15vh] relative flex justify-center items-center">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${bgIllustration1})`,
-          }}
-        ></div>
+          className="absolute inset-0 flex justify-center items-center bg-cover bg-center z-0"
+          style={{ backgroundImage: `url(${bgIllustration1.src})` }}
+        >
+          <div className="flex justify-between gap-10 absolute mx-auto my-auto z-10 bg-darkBlue/65 px-12 py-24 ">
+            <div className="w-[370px] h-[758px]">
+              <h1 className="text-4xl mb-4">We Are Top Lawyers And History</h1>
+              <Image
+                src={separator}
+                width={"auto"}
+                height={"auto"}
+                alt="separator"
+                className="mb-12"
+              />
+              <div className="flex flex-col gap-12">
+                <div className="flex flex-col justify-between">
+                  <p className="text-camel mb-3 font-semibold">1995 – Opening</p>
+                  <p>
+                    There are many variations of passages of Lorem Ipsum available, but majority
+                    going to use a passage.
+                  </p>
+                </div>
+                <div className="flex flex-col justify-between">
+                  <p className="text-camel mb-3 font-semibold">2011 – Open Branch Office</p>
+                  <p>
+                    There are many variations of passages of Lorem Ipsum available, but majority
+                    going to use a passage.
+                  </p>
+                </div>
+                <div className="flex flex-col justify-between">
+                  <p className="text-camel mb-3 font-semibold">2015 – 18000K Client’s</p>
+                  <p>
+                    There are many variations of passages of Lorem Ipsum available, but majority
+                    going to use a passage.
+                  </p>
+                </div>
+                <div className="flex flex-col justify-between">
+                  <p className="text-camel mb-3 font-semibold">2020– Best Law & Firm Awwards</p>
+                  <p>
+                    There are many variations of passages of Lorem Ipsum available, but majority
+                    going to use a passage.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <Image
+              src={balanceStatue}
+              width={"auto"}
+              height={758}
+              alt="separator"
+              className="my-2"
+            />
+            <div className="w-[430px] h-[758px]">
+              <h1 className="text-4xl mb-4 w-[300px] ">We Are Specialised And Experienced</h1>
+              <Image
+                src={separator}
+                width={"50px"}
+                height={"auto"}
+                alt="separator"
+                className="mb-12"
+              />
+              <p className="mb-16">
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                praesentium deleniti atque corrupti quos molestias excepturi odio dignissimos
+                ducimus qui blanditiis sint occaecati .
+              </p>
+              <div className="flex flex-col relative">
+                <div className="flex flex-col">
+                  <div className="flex justify-between">
+                    <p>Divorce And Family Cases</p>
+                    <p>75%</p>
+                  </div>
+                  <Image
+                    src={diagram75}
+                    width={"auto"}
+                    height={"auto"}
+                    alt="diagram"
+                    className="mb-8"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex justify-between">
+                    <p>Property And Construction</p>
+                    <p>80%</p>
+                  </div>
+                  <Image
+                    src={diagram80}
+                    width={"auto"}
+                    height={"auto"}
+                    alt="diagram"
+                    className="mb-8"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex justify-between">
+                    <p>Banking And Finance</p>
+                    <p>75%</p>
+                  </div>
+                  <Image
+                    src={diagram75}
+                    width={"auto"}
+                    height={"auto"}
+                    alt="diagram"
+                    className="mb-8"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex justify-between">
+                    <p>Banking And Finance</p>
+                    <p>90%</p>
+                  </div>
+                  <Image
+                    src={diagram90}
+                    width={"auto"}
+                    height={"auto"}
+                    alt="diagram"
+                    className="mb-16"
+                  />
+                </div>
+                <div className="camel-button">Free Consulting</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );

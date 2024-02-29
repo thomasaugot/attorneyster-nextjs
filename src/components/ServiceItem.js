@@ -9,7 +9,6 @@ export default function ServiceItem({ item }) {
   const images = {
     hidden: {
       opacity: 0,
-      // y: 5,
     },
     show: {
       opacity: 1,
