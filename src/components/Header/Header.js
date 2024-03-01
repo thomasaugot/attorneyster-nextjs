@@ -19,7 +19,7 @@ export const Header = () => {
         </Link>
         <div className="flex items-center">
           <Cart />
-          <Link href={"/"} className="font-outfit p-4 text-cream transparent-button hover:scale-90">
+          <Link href={"/"} className="font-outfit p-4 text-white blurred-button hover:scale-90">
             Book a Consultation
           </Link>
         </div>
@@ -31,25 +31,25 @@ export const Header = () => {
         <nav className="flex items-center">
           <Link
             href={"/"}
-            className="font-outfit text-cream mr-6 hover:underline underline-offset-4"
+            className="font-outfit text-white mr-6 hover:underline underline-offset-4"
           >
             Home
           </Link>
           <Link
             href={"/"}
-            className="font-outfit text-cream mx-6 hover:underline underline-offset-4"
+            className="font-outfit text-white mx-6 hover:underline underline-offset-4"
           >
             About Us
           </Link>
           <button
-            className="font-outfit text-cream mx-6 hover:underline flex items-end	underline-offset-4"
+            className="font-outfit text-white mx-6 hover:underline flex items-end	underline-offset-4"
             onClick={toggleSubMenu}
           >
             Pages&nbsp; <IoChevronDown size={20} />
           </button>
           <Link
             href={"/"}
-            className="font-outfit text-cream mx-5 hover:underline underline-offset-4"
+            className="font-outfit text-white mx-5 hover:underline underline-offset-4"
           >
             Contact Us
           </Link>

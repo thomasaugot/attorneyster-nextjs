@@ -41,6 +41,13 @@ import nattascha from "/src/assets/img/homepage/nattasha.svg";
 import minciPall from "/src/assets/img/homepage/minci.svg";
 import juliaRose from "/src/assets/img/homepage/julia.svg";
 import johnDavid from "/src/assets/img/homepage/john.svg";
+import thomasDanyel from "/src/assets/img/homepage/thomas.svg";
+import nikolona from "/src/assets/img/homepage/nokolona.svg";
+import michalDavid from "/src/assets/img/homepage/michal.svg";
+import instagram from "/src/assets/img/homepage/instagram.png";
+import facebook from "/src/assets/img/homepage/facebook.png";
+import twitter from "/src/assets/img/homepage/Twiter.png";
+import pinterest from "/src/assets/img/homepage/Pintrest.png";
 
 export default function Home() {
   const expertiseAreas = [
@@ -252,7 +259,7 @@ export default function Home() {
           </motion.div>
         )}
       </section>
-      <section className="h-full bg-cream py-[15vh] px-[15vh]">
+      <section className="h-full bg-white py-[15vh] px-[15vh]">
         <div>
           <h1 className="text-black text-4xl flex mx-auto w-[20vw] text-center">
             If you're in trouble we can help.
@@ -270,14 +277,14 @@ export default function Home() {
           </p>
         </div>
         <div className="flex justify-between gap-5">
-          <div className="flex bg-darkWhite p-[30px] gap-4 w-1/3">
+          <div className="flex bg-cream p-[30px] gap-4 w-1/3">
             <Image src={trustedClients} width={"auto"} height={"auto"} alt="chart illustration" />
             <div className="flex flex-col justify-center">
               <h2 className="text-black text-2xl text-nowrap">Trusted Clients</h2>
               <p className="text-black">There are of Lorem Ipsum</p>
             </div>
           </div>
-          <div className="flex bg-darkWhite p-[30px] gap-4 w-1/3">
+          <div className="flex bg-cream p-[30px] gap-4 w-1/3">
             <Image src={successfulCases} width={"auto"} height={"auto"} alt="chart illustration" />
             <div className="flex flex-col justify-center">
               <h2 className="text-black text-2xl text-nowrap">Successful Cases</h2>
@@ -526,6 +533,79 @@ export default function Home() {
                 form, by injected oir which don't look even slightly believable.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-white px-[10vw] py-[15vh]">
+        <div className="flex flex-col mx-auto my-auto">
+          <h1 className="text-black flex mx-auto font-bold text-3xl w-[402px] text-center">
+            Our Experienced Attorneys Are Ready To answer any questions
+          </h1>
+          <Image
+            src={separatorCentered}
+            width={"50px"}
+            height={"auto"}
+            alt="separator"
+            className="my-4 mx-auto"
+          />
+          <div className="flex flex-col mx-auto mt-6">
+            <div className="flex justify-between gap-4">
+              <div className="relative">
+                <Image src={nikolona} width={"auto"} height={"auto"} alt="logo" />
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-6 bg-white">
+                  <div className="flex justify-center gap-6 px-4">
+                    <Image src={instagram} width={"auto"} height={"auto"} alt="portait" />
+                    <Image src={facebook} width={"auto"} height={"auto"} alt="portait" />
+                    <Image src={twitter} width={"auto"} height={"auto"} alt="portait" />
+                    <Image src={pinterest} width={"auto"} height={"auto"} alt="portait" />
+                  </div>
+                  <div className="absolute bg-camel h-[0.5px] w-[40%] left-1/2 transform -translate-x-1/2 mt-5"></div>
+                  <h1 className=" absolute text-black left-1/2 transform -translate-x-1/2 mt-10 font-semibold text-2xl text-nowrap">
+                    Nikolona Gail
+                  </h1>
+                  <p className="absolute text-camel left-1/2 transform -translate-x-1/2 mt-20 text-xl text-nowrap">
+                    Senior Attorney
+                  </p>
+                </div>
+              </div>
+              <div className="relative">
+                <Image src={thomasDanyel} width={"auto"} height={"auto"} alt="logo" />
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-6 bg-white">
+                  <div className="flex justify-center gap-6 px-4">
+                    <Image src={instagram} width={"auto"} height={"auto"} alt="portait" />
+                    <Image src={facebook} width={"auto"} height={"auto"} alt="portait" />
+                    <Image src={twitter} width={"auto"} height={"auto"} alt="portait" />
+                    <Image src={pinterest} width={"auto"} height={"auto"} alt="portait" />
+                  </div>
+                  <div className="absolute bg-camel h-[0.5px] w-[40%] left-1/2 transform -translate-x-1/2 mt-5"></div>
+                  <h1 className=" absolute text-black left-1/2 transform -translate-x-1/2 mt-10 font-semibold text-2xl text-nowrap">
+                    Thomas Daniyel
+                  </h1>
+                  <p className="absolute text-camel left-1/2 transform -translate-x-1/2 mt-20 text-xl text-nowrap">
+                    Civil Attorney
+                  </p>
+                </div>
+              </div>
+              <div className="relative">
+                <Image src={michalDavid} width={"auto"} height={"auto"} alt="logo" />
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-6 bg-white">
+                  <div className="flex justify-center gap-6 px-4">
+                    <Image src={instagram} width={"auto"} height={"auto"} alt="portait" />
+                    <Image src={facebook} width={"auto"} height={"auto"} alt="portait" />
+                    <Image src={twitter} width={"auto"} height={"auto"} alt="portait" />
+                    <Image src={pinterest} width={"auto"} height={"auto"} alt="portait" />
+                  </div>
+                  <div className="absolute bg-camel h-[0.5px] w-[40%] left-1/2 transform -translate-x-1/2 mt-5"></div>
+                  <h1 className=" absolute text-black left-1/2 transform -translate-x-1/2 mt-10 font-semibold text-2xl text-nowrap">
+                    Michal David
+                  </h1>
+                  <p className="absolute text-camel left-1/2 transform -translate-x-1/2 mt-20 text-xl text-nowrap">
+                    Criminal Attorney
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="transparent-button flex mx-auto mt-36">Meet our Attorneys</div>
           </div>
         </div>
       </section>

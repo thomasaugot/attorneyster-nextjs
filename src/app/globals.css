@@ -25,7 +25,7 @@ body {
   h4,
   h5,
   h6 {
-    @apply text-cream font-cormorant;
+    @apply text-white font-cormorant;
   }
 
   p {
@@ -35,9 +35,13 @@ body {
 
 /* Buttons */
 
-.transparent-button {
+.blurred-button {
   background-color: rgba(255, 255, 255, 0.1);
   @apply transition-transform transform duration-100 scale-100 hover:scale-95;
+}
+
+.transparent-button {
+  @apply transition-transform transform duration-100 scale-100 hover:scale-95 cursor-pointer text-cyan text-xl font-semibold w-[255px] h-[60px] border-2 border-solid border-cyan flex justify-center items-center;
 }
 
 .camel-button {
@@ -53,7 +57,7 @@ body {
 }
 
 .white-button {
-  @apply cursor-pointer bg-cream transition-transform transform duration-100 scale-100 hover:scale-95;
+  @apply cursor-pointer bg-white transition-transform transform duration-100 scale-100 hover:scale-95;
 }
 
 .dropshadow {
