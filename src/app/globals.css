@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-white font-cormorant;
+  }
+
+  p {
+    @apply text-gray-300 font-outfit;
+  }
+}
+
+/* Buttons */
+
+.blurred-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  @apply transition-transform transform duration-100 scale-100 hover:scale-95;
+}
+
+.transparent-button {
+  @apply transition-transform transform duration-100 scale-100 hover:scale-95 cursor-pointer text-cyan text-xl font-semibold w-[255px] h-[60px] border-2 border-solid border-cyan flex justify-center items-center;
+}
+
+.camel-button {
+  @apply cursor-pointer transition-transform transform duration-100 scale-100 hover:scale-95 font-medium my-[23px] bg-camel w-[255px] h-[55px] flex items-center justify-center capitalize;
+}
+
+.small-blue-button {
+  @apply cursor-pointer transition-transform transform duration-100 scale-100 hover:scale-95 font-medium text-white bg-nightBlue w-[155px] h-[45px] flex items-center justify-center capitalize;
+}
+
+.dark-button {
+  @apply cursor-pointer bg-darkBlue transition-transform transform duration-100 scale-100 hover:scale-95;
+}
+
+.white-button {
+  @apply cursor-pointer bg-white transition-transform transform duration-100 scale-100 hover:scale-95;
+}
+
+.dropshadow {
+  filter: drop-shadow(4px 0px 4px 0px #000000);
+}
