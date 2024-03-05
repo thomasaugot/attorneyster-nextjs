@@ -48,7 +48,7 @@ import instagram from "/src/assets/img/homepage/instagram.png";
 import facebook from "/src/assets/img/homepage/facebook.png";
 import twitter from "/src/assets/img/homepage/Twiter.png";
 import pinterest from "/src/assets/img/homepage/Pintrest.png";
-//////
+//////////
 
 export default function Home() {
   const expertiseAreas = [
