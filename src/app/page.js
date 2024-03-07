@@ -128,26 +128,32 @@ export default function Home() {
 
   const blogArticles = [
     {
+      id: 1,
       header: "Legal Advice   |   Sunday, July 24, 2022 ",
       title: "Prevent A Further Breach of The Peace In The States",
       intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
     }, {
+      id: 2,
       header: "Legal Advice   |   Sunday, July 24, 2022 ",
       title: "Prevent A Further Breach of The Peace In The States",
       intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
     }, {
+      id: 3,
       header: "Legal Advice   |   Sunday, July 24, 2022 ",
       title: "Prevent A Further Breach of The Peace In The States",
       intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
     }, {
+      id: 4,
       header: "Legal Advice   |   Sunday, July 24, 2022 ",
       title: "Prevent A Further Breach of The Peace In The States",
       intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
     }, {
+      id: 5,
       header: "Legal Advice   |   Sunday, July 24, 2022 ",
       title: "Prevent A Further Breach of The Peace In The States",
       intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
     }, {
+      id: 6,
       header: "Legal Advice   |   Sunday, July 24, 2022 ",
       title: "Prevent A Further Breach of The Peace In The States",
       intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
@@ -696,9 +702,9 @@ export default function Home() {
         </div>
         <div className="my-24 w-full h-[1px] bg-white/25"></div>
         <div className="flex w-full flex-wrap	justify-between">
-          {blogArticles.map((item, index) => {
+          {blogArticles.map((item) => {
             return (
-              <div className="flex flex-col gap-4 w-[32%] ">
+              <div key={item.id} className="flex flex-col gap-4 w-[32%] ">
                 <p className="text-camel">{item.header}</p>
                 <div className="w-full h-[1px] bg-white/25"></div>
                 <h1 className="text-2xl">{item.title}</h1>
