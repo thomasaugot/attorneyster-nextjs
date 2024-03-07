@@ -8,6 +8,7 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
 import ServiceItem from "@/components/ServiceItem";
+import HomepageForm from "@/components/HomepageForm";
 
 import banner from "@/assets/img/homepage/banner-main.webp";
 import separator from "@/assets/img/misc/separator.svg";
@@ -49,6 +50,8 @@ import facebook from "@/assets/img/homepage/facebook.png";
 import twitter from "@/assets/img/homepage/Twiter.png";
 import pinterest from "@/assets/img/homepage/Pintrest.png";
 import call from "@/assets/img/homepage/Call.png";
+import bgillu2 from "@/assets/img/homepage/bg-illu-2.svg";
+import writingHand from "@/assets/img/homepage/writing-hand.svg";
 
 export default function Home() {
   const expertiseAreas = [
@@ -122,6 +125,34 @@ export default function Home() {
       },
     },
   };
+
+  const blogArticles = [
+    {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    }, {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    }, {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    }, {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    }, {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    }, {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    },
+  ]
 
   const [isExpertiseVisible, setIsExpertiseVisible] = useState(false);
   const [isPartnersVisible, setIsPartnersVisible] = useState(false);
@@ -627,6 +658,55 @@ export default function Home() {
               <Image src={call} width={"auto"} height={"auto"} alt="logo" className="cursor-pointer" />
             </div>
           </div>
+        </div>
+      </section>
+      <section className="h-[120vh] py-[15vh] px-[15vh] relative flex justify-center items-center">
+        <div
+          className="absolute inset-0 flex justify-center items-center bg-cover bg-center z-0 overflow-hidden"
+          style={{ backgroundImage: `url(${bgillu2.src})` }}
+        >
+          <HomepageForm />
+        </div>
+      </section>
+      <section className="bg-darkBlue px-[10vw] py-[15vh]">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-4xl mb-4">Recent Blogs</h1>
+          <Image
+            src={separatorCentered}
+            width={"50px"}
+            height={"auto"}
+            alt="separator"
+            className="mb-12"
+          />
+        </div>
+        <div className="flex gap-4 justify-between items-center">
+          <Image
+            src={writingHand}
+            alt="writingHand"
+            className="mr-[50px] w-1/2 h-auto"
+          />
+          <div className="flex flex-col gap-4">
+            <p className="text-camel"> Criminal Law, Kidnapping   |   Sunday, July 24, 2022   </p>
+            <div className="w-full h-[1px] bg-white/25"></div>
+            <h1 className="text-2xl">An Independent Examination Of <br />
+              Charity Accounts</h1>
+            <p>There are  of Lorem Ipsum available, but the majority have su alteration in some form, by injected oir  which don't look even slightly believable.</p>
+            <Link href="#" passHref className="text-camel underline decoration-camel">Read More</Link>
+          </div>
+        </div>
+        <div className="my-24 w-full h-[1px] bg-white/25"></div>
+        <div className="flex w-full flex-wrap	justify-between">
+          {blogArticles.map((item, index) => {
+            return (
+              <div className="flex flex-col gap-4 w-[32%] ">
+                <p className="text-camel">{item.header}</p>
+                <div className="w-full h-[1px] bg-white/25"></div>
+                <h1 className="text-2xl">{item.title}</h1>
+                <p>{item.intro}</p>
+                <Link href="#" passHref className="text-camel underline decoration-camel">Read More</Link>
+              </div>
+            )
+          })}
         </div>
       </section>
     </main>
