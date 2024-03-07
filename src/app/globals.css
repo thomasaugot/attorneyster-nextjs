@@ -19,6 +19,7 @@ body {
 }
 
 @layer base {
+
   h1,
   h2,
   h3,
@@ -57,7 +58,7 @@ body {
 }
 
 .white-button {
-  @apply cursor-pointer bg-white transition-transform transform duration-100 scale-100 hover:scale-95;
+  @apply cursor-pointer bg-white transition-transform transform duration-100 scale-100 hover:scale-95 w-[255px] h-[55px] flex items-center justify-center capitalize;
 }
 
 .dropshadow {

@@ -8,47 +8,50 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
 import ServiceItem from "@/components/ServiceItem";
+import HomepageForm from "@/components/HomepageForm";
 
-import banner from "/src/assets/img/homepage/banner-main.webp";
-import separator from "/src/assets/img/misc/separator.svg";
-import separatorCentered from "/src/assets/img/misc/separator-2.svg";
-import illustration1 from "/src/assets/img/homepage/illustration-1.svg";
-import illustration2 from "/src/assets/img/homepage/illustration-2.svg";
-import peterpark from "/src/assets/img/homepage/peter-park.svg";
-import caseFinish from "/src/assets/img/homepage/case-finish.svg";
-import experienceX35 from "/src/assets/img/homepage/35yexperience.svg";
-import iconBuilding from "/src/assets/img/homepage/icon-buildings.svg";
-import iconSuitcase from "/src/assets/img/homepage/icon-suitcase.svg";
-import iconTruck from "/src/assets/img/homepage/icon-truck.svg";
-import iconGrave from "/src/assets/img/homepage/icon-grave.svg";
-import iconHandCuffs from "/src/assets/img/homepage/icon-handcuffs.svg";
-import iconFamily from "/src/assets/img/homepage/icon-family.svg";
-import criminalDefenseCasesServed from "/src/assets/img/homepage/criminal-defense-cases-served.png";
-import trustedClients from "/src/assets/img/homepage/trusted-clients.png";
-import successfulCases from "/src/assets/img/homepage/successful-cases.png";
-import modernHome from "/src/assets/img/homepage/modern-home-logo.svg";
-import vintageInterior from "/src/assets/img/homepage/vintageinterior-logo.svg";
-import brand from "/src/assets/img/homepage/brand-logo.svg";
-import natureHome from "/src/assets/img/homepage/naturehome-logo.svg";
-import classicDesign from "/src/assets/img/homepage/classic-design-logo.svg";
-import bgIllustration1 from "/src/assets/img/homepage/bg-illu-1.svg";
-import balanceStatue from "/src/assets/img/homepage/balance-statue.svg";
-import diagram75 from "/src/assets/img/homepage/diagram75.png";
-import diagram80 from "/src/assets/img/homepage/diagram80.png";
-import diagram90 from "/src/assets/img/homepage/diagram90.png";
-import quotes from "/src/assets/img/homepage/quotes.svg";
-import nattascha from "/src/assets/img/homepage/nattasha.svg";
-import minciPall from "/src/assets/img/homepage/minci.svg";
-import juliaRose from "/src/assets/img/homepage/julia.svg";
-import johnDavid from "/src/assets/img/homepage/john.svg";
-import thomasDanyel from "/src/assets/img/homepage/thomas.svg";
-import nikolona from "/src/assets/img/homepage/nokolona.svg";
-import michalDavid from "/src/assets/img/homepage/michal.svg";
-import instagram from "/src/assets/img/homepage/instagram.png";
-import facebook from "/src/assets/img/homepage/facebook.png";
-import twitter from "/src/assets/img/homepage/Twiter.png";
-import pinterest from "/src/assets/img/homepage/Pintrest.png";
-//////////
+import banner from "@/assets/img/homepage/banner-main.webp";
+import separator from "@/assets/img/misc/separator.svg";
+import separatorCentered from "@/assets/img/misc/separator-2.svg";
+import illustration1 from "@/assets/img/homepage/illustration-1.svg";
+import illustration2 from "@/assets/img/homepage/illustration-2.svg";
+import peterpark from "@/assets/img/homepage/peter-park.svg";
+import caseFinish from "@/assets/img/homepage/case-finish.svg";
+import experienceX35 from "@/assets/img/homepage/35yexperience.svg";
+import iconBuilding from "@/assets/img/homepage/icon-buildings.svg";
+import iconSuitcase from "@/assets/img/homepage/icon-suitcase.svg";
+import iconTruck from "@/assets/img/homepage/icon-truck.svg";
+import iconGrave from "@/assets/img/homepage/icon-grave.svg";
+import iconHandCuffs from "@/assets/img/homepage/icon-handcuffs.svg";
+import iconFamily from "@/assets/img/homepage/icon-family.svg";
+import criminalDefenseCasesServed from "@/assets/img/homepage/criminal-defense-cases-served.png";
+import trustedClients from "@/assets/img/homepage/trusted-clients.png";
+import successfulCases from "@/assets/img/homepage/successful-cases.png";
+import modernHome from "@/assets/img/homepage/modern-home-logo.svg";
+import vintageInterior from "@/assets/img/homepage/vintageinterior-logo.svg";
+import brand from "@/assets/img/homepage/brand-logo.svg";
+import natureHome from "@/assets/img/homepage/naturehome-logo.svg";
+import classicDesign from "@/assets/img/homepage/classic-design-logo.svg";
+import bgIllustration1 from "@/assets/img/homepage/bg-illu-1.svg";
+import balanceStatue from "@/assets/img/homepage/balance-statue.svg";
+import diagram75 from "@/assets/img/homepage/diagram75.png";
+import diagram80 from "@/assets/img/homepage/diagram80.png";
+import diagram90 from "@/assets/img/homepage/diagram90.png";
+import quotes from "@/assets/img/homepage/quotes.svg";
+import nattascha from "@/assets/img/homepage/nattasha.svg";
+import minciPall from "@/assets/img/homepage/minci.svg";
+import juliaRose from "@/assets/img/homepage/julia.svg";
+import johnDavid from "@/assets/img/homepage/john.svg";
+import thomasDanyel from "@/assets/img/homepage/thomas.svg";
+import nikolona from "@/assets/img/homepage/nokolona.svg";
+import michalDavid from "@/assets/img/homepage/michal.svg";
+import instagram from "@/assets/img/homepage/instagram.png";
+import facebook from "@/assets/img/homepage/facebook.png";
+import twitter from "@/assets/img/homepage/Twiter.png";
+import pinterest from "@/assets/img/homepage/Pintrest.png";
+import call from "@/assets/img/homepage/Call.png";
+import bgillu2 from "@/assets/img/homepage/bg-illu-2.svg";
+import writingHand from "@/assets/img/homepage/writing-hand.svg";
 
 export default function Home() {
   const expertiseAreas = [
@@ -117,10 +120,39 @@ export default function Home() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 2,
+        delay: 0.3,
+        duration: 1,
       },
     },
   };
+
+  const blogArticles = [
+    {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    }, {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    }, {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    }, {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    }, {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    }, {
+      header: "Legal Advice   |   Sunday, July 24, 2022 ",
+      title: "Prevent A Further Breach of The Peace In The States",
+      intro: "There are  of Lorem Ipsum available, but majority have su alteration in some form, by injected oir  which don't look even slightly believable."
+    },
+  ]
 
   const [isExpertiseVisible, setIsExpertiseVisible] = useState(false);
   const [isPartnersVisible, setIsPartnersVisible] = useState(false);
@@ -608,6 +640,73 @@ export default function Home() {
             </div>
             <div className="transparent-button flex mx-auto mt-36">Meet our Attorneys</div>
           </div>
+        </div>
+      </section>
+      <section className="bg-darkBlue px-[10vw] py-[15vh]">
+        <div className="flex mx-auto my-auto flex justify-center items-center">
+          <div className="flex flex-col gap-6 w-1/2 h-auto">
+            <h1 className="text-white font-bold text-3xl w-[402px] text-left">Our Expert professional law team
+              is always ready to serve you the
+              best solution!</h1>
+            <p className="text-white w-[400px] text-left">There are  of Lorem Ipsum available, but the majority have su alteration in some form, by injected oir  which don't look even slightly believable.</p>
+            <div className="camel-button">Contact Us</div>
+          </div>
+          <div className="w-1/2 h-full bg-white h-auto flex justify-center items-center">
+            <div className="border-solid border-8 border-grey m-12 w-full h-[70%] py-8 px-4 flex flex-col gap-6">
+              <h1 className="text-black font-bold text-3xl w-[402px] text-left">Get a Free Consultation</h1>
+              <p className="text-black w-[400px] text-left">There are of Lorem Ipsum available, but the majority by injected humour  which don't look even.</p>
+              <Image src={call} width={"auto"} height={"auto"} alt="logo" className="cursor-pointer" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="h-[120vh] py-[15vh] px-[15vh] relative flex justify-center items-center">
+        <div
+          className="absolute inset-0 flex justify-center items-center bg-cover bg-center z-0 overflow-hidden"
+          style={{ backgroundImage: `url(${bgillu2.src})` }}
+        >
+          <HomepageForm />
+        </div>
+      </section>
+      <section className="bg-darkBlue px-[10vw] py-[15vh]">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-4xl mb-4">Recent Blogs</h1>
+          <Image
+            src={separatorCentered}
+            width={"50px"}
+            height={"auto"}
+            alt="separator"
+            className="mb-12"
+          />
+        </div>
+        <div className="flex gap-4 justify-between items-center">
+          <Image
+            src={writingHand}
+            alt="writingHand"
+            className="mr-[50px] w-1/2 h-auto"
+          />
+          <div className="flex flex-col gap-4">
+            <p className="text-camel"> Criminal Law, Kidnapping   |   Sunday, July 24, 2022   </p>
+            <div className="w-full h-[1px] bg-white/25"></div>
+            <h1 className="text-2xl">An Independent Examination Of <br />
+              Charity Accounts</h1>
+            <p>There are  of Lorem Ipsum available, but the majority have su alteration in some form, by injected oir  which don't look even slightly believable.</p>
+            <Link href="#" passHref className="text-camel underline decoration-camel">Read More</Link>
+          </div>
+        </div>
+        <div className="my-24 w-full h-[1px] bg-white/25"></div>
+        <div className="flex w-full flex-wrap	justify-between">
+          {blogArticles.map((item, index) => {
+            return (
+              <div className="flex flex-col gap-4 w-[32%] ">
+                <p className="text-camel">{item.header}</p>
+                <div className="w-full h-[1px] bg-white/25"></div>
+                <h1 className="text-2xl">{item.title}</h1>
+                <p>{item.intro}</p>
+                <Link href="#" passHref className="text-camel underline decoration-camel">Read More</Link>
+              </div>
+            )
+          })}
         </div>
       </section>
     </main>
