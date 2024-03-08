@@ -3,7 +3,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
@@ -45,10 +45,10 @@ import johnDavid from "@/assets/img/homepage/john.svg";
 import thomasDanyel from "@/assets/img/homepage/thomas.svg";
 import nikolona from "@/assets/img/homepage/nokolona.svg";
 import michalDavid from "@/assets/img/homepage/michal.svg";
-import instagram from "@/assets/img/homepage/instagram.png";
-import facebook from "@/assets/img/homepage/facebook.png";
-import twitter from "@/assets/img/homepage/Twiter.png";
-import pinterest from "@/assets/img/homepage/Pintrest.png";
+import instagram from "@/assets/img/homepage/instagram.svg";
+import facebook from "@/assets/img/homepage/facebook.svg";
+import twitter from "@/assets/img/homepage/twitter.svg";
+import pinterest from "@/assets/img/homepage/pinterest.svg";
 import call from "@/assets/img/homepage/Call.png";
 import bgillu2 from "@/assets/img/homepage/bg-illu-2.svg";
 import writingHand from "@/assets/img/homepage/writing-hand.svg";
@@ -58,6 +58,7 @@ import lawyers from "@/assets/img/homepage/lawyers.svg";
 import courtBuilding from "@/assets/img/homepage/court-building.svg";
 import library from "@/assets/img/homepage/library.svg";
 import library2 from "@/assets/img/homepage/library-2.svg";
+import bgIllustration3 from "@/assets/img/homepage/bg-illu-3.svg";
 
 export default function Home() {
   const expertiseAreas = [
@@ -185,6 +186,7 @@ export default function Home() {
 
   const [isExpertiseVisible, setIsExpertiseVisible] = useState(false);
   const [isPartnersVisible, setIsPartnersVisible] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
   const { ref: expertiseRef, inView: expertiseInView } = useInView({
     threshold: 0.2,
@@ -193,6 +195,16 @@ export default function Home() {
   const { ref: partnersRef, inView: partnersInView } = useInView({
     threshold: 0.2,
   });
+
+  const { ref: formRef, inView: formInView } = useInView({
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (formInView) {
+      setIsFormVisible(true);
+    }
+  }, [formInView]);
 
   useEffect(() => {
     if (expertiseInView) {
@@ -315,7 +327,7 @@ export default function Home() {
           </div>
           <div className="w-[0.5px] h-[105px] bg-white opacity-40"></div>
           <p className="w-[50%]">
-            There are{" "}
+            There are
             <span className="text-camel">many variations of passages</span> of
             Lorem Ipsum available, but the majority have su alteration in some
             form, by injected humour, oir
@@ -889,12 +901,15 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="h-[120vh] py-[15vh] px-[15vh] relative flex justify-center items-center">
+      <section
+        className="h-[120vh] py-[15vh] px-[15vh] relative flex justify-center items-center"
+        ref={formRef}
+      >
         <div
           className="absolute inset-0 flex justify-center items-center bg-cover bg-center z-0 overflow-hidden"
           style={{ backgroundImage: `url(${bgillu2.src})` }}
         >
-          <HomepageForm />
+          {isFormVisible && <HomepageForm />}
         </div>
       </section>
       <section className="bg-darkBlue px-[10vw] py-[15vh]">
@@ -962,7 +977,12 @@ export default function Home() {
             );
           })}
         </div>
-        <div></div>
+      </section>
+      <section className="h-[40vh] relative flex justify-center items-center">
+        <div
+          className="absolute inset-0 flex justify-center items-center bg-cover bg-center z-0 overflow-hidden"
+          style={{ backgroundImage: `url(${bgIllustration3.src})` }}
+        ></div>
       </section>
     </main>
   );
