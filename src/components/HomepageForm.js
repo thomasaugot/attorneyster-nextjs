@@ -1,7 +1,9 @@
 "use client";
 
 import emailjs from "@emailjs/browser";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const HomepageForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -65,11 +67,27 @@ const HomepageForm = () => {
         messageRef.current.value = "";
     };
 
+    const [isFormVisible, setIsFormVisible] = useState(false);
+
+    const { ref: formRef, inView: formInView } = useInView({
+        threshold: 0.2,
+    });
+
+    useEffect(() => {
+        if (formInView) {
+            setIsFormVisible(true);
+        }
+    }, [formInView]);
+
     return (
-        <form
+        <motion.form
+            initial={{ rotateY: 180 }}
+            animate={{ rotateY: 0 }}
+            transition={{ duration: 1 }}
             className="bg-darkBlue w-full mx-[15vw] py-[5vh] px-[7vw]"
             onSubmit={sendMessage}
             action=""
+            ref={formRef}
         >
             <div className="flex w-full justify-between gap-6">
                 <div className="m-4 w-1/2">
@@ -143,7 +161,7 @@ const HomepageForm = () => {
                     </p>
                 )}
             </div>
-        </form>
+        </motion.form>
     );
 };
 
