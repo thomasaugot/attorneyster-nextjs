@@ -32,6 +32,10 @@ body {
   p {
     @apply text-gray-300 font-outfit;
   }
+
+  li {
+    @apply text-white font-outfit font-light my-4;
+  }
 }
 
 /* Buttons */
