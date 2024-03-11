@@ -220,26 +220,33 @@ export default function Home() {
 
   return (
     <main className="relative">
-      <Image
-        src={banner}
-        width={"100vw"}
-        height={"auto"}
-        alt="logo"
-        className="z-0"
-        priority={true}
-      />
-      <section className="z-10 absolute top-[300px] left-[210px] flex flex-col max-w-[560px]">
-        <Image src={separator} width={"50px"} height={"auto"} alt="separator" />
-        <h1 className="text-6xl leading-[114%] my-3 capitalize">
-          Deeper Understanding Better Solutions
-        </h1>
-        <p className="text-camel text-xl leading-normal">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a looking at its layout.
-        </p>
-        <Link href={"/"} className="camel-button hover:scale-95">
-          Get in touch
-        </Link>
+      <section
+        className={`bg-no-repeat bg-cover z-10 flex flex-col inset-0 h-[100vh] lg:h-[120vh] relative bg-left-top lg:bg-center`}
+        style={{
+          backgroundImage: `url(${banner.src})`,
+          zIndex: -1,
+        }}
+      >
+        <div className="max-w-[560px] flex flex-col justify-center lg:items-left ml-[5vw] lg:ml-[15vw] mt-[25vh] lg:mt-[45vh] ">
+          <Image
+            src={separator}
+            alt="separator"
+            className="w-[80px] h-auto md:w-[175px] lg:w-[100px]"
+          />
+          <h1 className="text-5xl md:text-7xl lg:text-6xl leading-[114%] my-3 capitalize text-wrap max-w-[90vw]">
+            Deeper Understanding Better Solutions
+          </h1>
+          <p className="text-camel text-lg md:text-3xl lg:text-xl leading-normal max-w-[90vw] mb-6 lg:mb-0">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a looking at its layout.
+          </p>
+          <Link
+            href={"/"}
+            className="camel-button hover:scale-95 text-lg md:text-3xl lg:text-xl"
+          >
+            Get in touch
+          </Link>
+        </div>
       </section>
       <section className="relative bg-darkBlue w-full">
         <div className="flex max-w-[80vw] my-[120px] mx-auto gap-12">

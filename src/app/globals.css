@@ -50,7 +50,7 @@ body {
 }
 
 .camel-button {
-  @apply cursor-pointer transition-transform transform duration-100 scale-100 hover:scale-95 font-medium my-[23px] bg-camel w-[255px] h-[55px] flex items-center justify-center capitalize;
+  @apply cursor-pointer transition-transform transform duration-100 scale-100 hover:scale-95 font-medium my-[23px] bg-camel w-[255px] md:w-[325px] h-[55px] md:h-[75px] lg:w-[255px] lg:h-[55px] flex items-center justify-center capitalize;
 }
 
 .small-blue-button {

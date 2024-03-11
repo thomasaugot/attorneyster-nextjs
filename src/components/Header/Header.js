@@ -79,7 +79,7 @@ export const Header = () => {
             className={
               isOpen
                 ? "fixed z-40 lg:hidden left-0 top-0 w-[100%] h-full ease-in-out duration-500 bg-cyan/95 flex flex-col justify-center items-center"
-                : "mt-24 z-40 ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
+                : "flex flex-col justify-center items-center z-40 ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
             }
           >
             {/* Mobile Navigation Items */}
