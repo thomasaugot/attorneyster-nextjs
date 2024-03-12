@@ -23,7 +23,7 @@ export default function ServiceItem({ item }) {
     <motion.div
       variants={images}
       key={index}
-      className="w-[30%] bg-cyan/50 flex flex-col justify-center p-8 items-stretch"
+      className="w-[90vw] md:w-[40vw] xl:w-[30%] bg-cyan/50 flex flex-col justify-center p-8 items-stretch"
     >
       <h1 className="text-white text-3xl pb-2">{title}</h1>
       <p className="text-white">{text}</p>
