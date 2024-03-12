@@ -218,6 +218,21 @@ export default function Home() {
     }
   }, [partnersInView]);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <main className="relative">
       <section
@@ -249,42 +264,108 @@ export default function Home() {
         </div>
       </section>
       <section className="relative bg-darkBlue w-full">
-        <div className="flex max-w-[80vw] my-[120px] mx-auto gap-12">
-          <div className="flex flex-col justify-between gap-12">
-            <Image
-              src={illustration1}
-              width={"400px"}
-              height={"auto"}
-              alt="illustration1"
-              className="mr-[50px] "
-            />
-            <Image
-              src={illustration2}
-              width={"50px"}
-              height={"auto"}
-              alt="illustration2"
-              className="mr-[50px] "
-            />
+        {!isMobile ? (
+          <div className="flex max-w-[80vw] my-[120px] mx-auto gap-12">
+            <div className="flex flex-col justify-between gap-12">
+              <Image
+                src={illustration1}
+                width={"400px"}
+                height={"auto"}
+                alt="illustration1"
+                className="mr-[50px] "
+              />
+              <Image
+                src={illustration2}
+                width={"50px"}
+                height={"auto"}
+                alt="illustration2"
+                className="mr-[50px] "
+              />
+            </div>
+            <div className="flex flex-col justify-center gap-4">
+              <h1 className="text-[40px]">
+                The Simple Choice <br /> for Complex Litigation
+              </h1>
+              <Image
+                src={separator}
+                width={"50px"}
+                height={"auto"}
+                alt="separator"
+                className="mr-[50px] "
+              />
+              <p className="max-w-[40vw]">
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have su alteration in some form, by injected
+                humour, oir randomised words which don't look even slightly
+                believable. If you are going to use a passage of Lorem Ipsum,
+                you need to be sure there isn't anything.
+              </p>
+              <div className="flex mt-6 items-center">
+                <Image
+                  src={peterpark}
+                  width={"50px"}
+                  height={"auto"}
+                  alt="peterpark"
+                  className="mr-[20px]"
+                />
+                <h3 className="text-2xl italic">Peeter Park</h3>
+              </div>
+              <div className="flex justify-between gap-8">
+                <div className="my-8 fill ">
+                  <Image
+                    src={caseFinish}
+                    width={"50px"}
+                    height={"auto"}
+                    alt="caseFinish"
+                  />
+                </div>
+                <div className="my-8 fill ">
+                  <Image
+                    src={experienceX35}
+                    width={"50px"}
+                    height={"auto"}
+                    alt="experienceX35"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col justify-center gap-4">
-            <h1 className="text-[40px]">
-              The Simple Choice <br /> for Complex Litigation
-            </h1>
-            <Image
-              src={separator}
-              width={"50px"}
-              height={"auto"}
-              alt="separator"
-              className="mr-[50px] "
-            />
-            <p className="max-w-[40vw]">
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have su alteration in some form, by injected
-              humour, oir randomised words which don't look even slightly
-              believable. If you are going to use a passage of Lorem Ipsum, you
-              need to be sure there isn't anything.
-            </p>
-            <div className="flex mt-6 items-center">
+        ) : (
+          <div className="flex flex-col">
+            <div className="flex flex-col justify-between gap-8">
+              <h1 className="text-4xl text-center max-w-[90vw] mx-auto mt-12">
+                The Simple Choice <br /> for Complex Litigation
+              </h1>
+              <Image
+                src={separatorCentered}
+                width={"50px"}
+                height={"auto"}
+                alt="separator"
+                className="mx-auto"
+              />
+              <Image
+                src={illustration1}
+                width={"400px"}
+                height={"auto"}
+                alt="illustration1"
+                className="mx-auto"
+              />
+              <p className="max-w-[90vw] mx-auto text-center">
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have su alteration in some form, by injected
+                humour, oir randomised words which don't look even slightly
+                believable. If you are going to use a passage of Lorem Ipsum,
+                you need to be sure there isn't anything.
+              </p>
+              <Image
+                src={illustration2}
+                width={"50px"}
+                height={"auto"}
+                alt="illustration2"
+                className="mx-auto "
+              />
+            </div>
+            <div className="flex items-center mx-auto my-8">
               <Image
                 src={peterpark}
                 width={"50px"}
@@ -294,48 +375,54 @@ export default function Home() {
               />
               <h3 className="text-2xl italic">Peeter Park</h3>
             </div>
-            <div className="flex justify-between gap-8">
-              <div className="my-8 fill ">
-                <Image
-                  src={caseFinish}
-                  width={"50px"}
-                  height={"auto"}
-                  alt="caseFinish"
-                />
-              </div>
-              <div className="my-8 fill ">
-                <Image
-                  src={experienceX35}
-                  width={"50px"}
-                  height={"auto"}
-                  alt="experienceX35"
-                />
-              </div>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
+              <Image
+                src={caseFinish}
+                width={"50px"}
+                height={"auto"}
+                alt="caseFinish"
+              />
+              <Image
+                src={experienceX35}
+                width={"50px"}
+                height={"auto"}
+                alt="experienceX35"
+              />
             </div>
           </div>
-        </div>
+        )}
       </section>
       <section
-        className="h-full bg-nightBlue py-[15vh] px-[15vh]"
+        className="h-full bg-nightBlue py-[5vh] lg:py-[15vh] xl:px-[15vh]"
         ref={expertiseRef}
       >
-        <div className="max-w-[80vw] mx-auto flex justify-between items-center">
+        <div className="max-w-[80vw] mx-auto flex flex-col lg:flex-row justify-between items-center">
           <div className="flex flex-col justify-center gap-4">
-            <h1 className="text-[40px]">
+            <h1 className="text-[40px] w-[90vw] lg:w-[unset] text-center lg:text-left mx-auto lg:mx-[unset]">
               Explore <br /> Our Practice Areas
             </h1>
-            <Image
-              src={separator}
-              width={"50px"}
-              height={"auto"}
-              alt="separator"
-              className="mr-[50px]"
-            />
+            {!isMobile ? (
+              <Image
+                src={separator}
+                width={"50px"}
+                height={"auto"}
+                alt="separator"
+                className="lg:mr-[50px]"
+              />
+            ) : (
+              <Image
+                src={separatorCentered}
+                width={"50px"}
+                height={"auto"}
+                alt="separator"
+                className="mx-auto mb-8"
+              />
+            )}
           </div>
-          <div className="w-[0.5px] h-[105px] bg-white opacity-40"></div>
-          <p className="w-[50%]">
+          <div className="hidden lg:block w-[0.5px] h-[105px] bg-white opacity-40"></div>
+          <p className="w-[90vw] text-center lg:text-left lg:w-[50%]">
             There are
-            <span className="text-camel">many variations of passages</span> of
+            <span className="text-camel"> many variations of passages</span> of
             Lorem Ipsum available, but the majority have su alteration in some
             form, by injected humour, oir
             <span className="text-camel"> randomised workds</span> which don't
