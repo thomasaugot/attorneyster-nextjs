@@ -34,6 +34,7 @@ import natureHome from "@/assets/img/homepage/naturehome-logo.svg";
 import classicDesign from "@/assets/img/homepage/classic-design-logo.svg";
 import bgIllustration1 from "@/assets/img/homepage/bg-illu-1.svg";
 import balanceStatue from "@/assets/img/homepage/balance-statue.svg";
+import balanceStatueMobile from "@/assets/img/homepage/balance-statue-mobile.png";
 import diagram75 from "@/assets/img/homepage/diagram75.png";
 import diagram80 from "@/assets/img/homepage/diagram80.png";
 import diagram90 from "@/assets/img/homepage/diagram90.png";
@@ -49,6 +50,10 @@ import instagram from "@/assets/img/homepage/instagram.svg";
 import facebook from "@/assets/img/homepage/facebook.svg";
 import twitter from "@/assets/img/homepage/twitter.svg";
 import pinterest from "@/assets/img/homepage/pinterest.svg";
+import instagramBlack from "@/assets/img/homepage/InstaBlack.jpg";
+import facebookBlack from "@/assets/img/homepage/FbBlack.svg";
+import twitterBlack from "@/assets/img/homepage/Twiterblack.png";
+import pinterestBlack from "@/assets/img/homepage/Pintrestblack.png";
 import call from "@/assets/img/homepage/Call.png";
 import bgillu2 from "@/assets/img/homepage/bg-illu-2.svg";
 import writingHand from "@/assets/img/homepage/writing-hand.svg";
@@ -443,9 +448,9 @@ export default function Home() {
           </motion.div>
         )}
       </section>
-      <section className="h-full bg-white py-[15vh] px-[15vh]">
+      <section className="h-full bg-white py-12 lg:py-[15vh] lg:px-[15vh]">
         <div>
-          <h1 className="text-black text-4xl flex mx-auto w-[20vw] text-center">
+          <h1 className="text-black text-4xl flex mx-auto justify-center w-[90vw] xl:w-[25vw] text-center">
             If you're in trouble we can help.
           </h1>
           <Image
@@ -455,14 +460,14 @@ export default function Home() {
             alt="separator"
             className="mx-auto mt-4"
           />
-          <p className="flex mx-auto w-[45vw] text-center my-[47px] font-outfit text-darkGrey dropshadow">
+          <p className="flex mx-auto w-[90vw] lg:w-[45vw] text-center my-6 lg:my-[47px] font-outfit text-darkGrey dropshadow">
             There are of Lorem Ipsum available, but the majority have su
             alteration in some form, by injected humour, oir which don't look
             even slightly believable.
           </p>
         </div>
-        <div className="flex justify-between gap-5">
-          <div className="flex bg-cream p-[30px] gap-4 w-1/3">
+        <div className="flex flex-col lg:flex-row lg:mx-[unset] justify-center items-center lg:justify-between gap-5">
+          <div className="flex bg-cream p-[30px] gap-4 md:w-1/2 lg:w-1/3">
             <Image
               src={trustedClients}
               width={"auto"}
@@ -476,7 +481,7 @@ export default function Home() {
               <p className="text-black">There are of Lorem Ipsum</p>
             </div>
           </div>
-          <div className="flex bg-cream p-[30px] gap-4 w-1/3">
+          <div className="flex bg-cream p-[30px] gap-4 md:w-1/2 lg:w-1/3">
             <Image
               src={successfulCases}
               width={"auto"}
@@ -490,7 +495,7 @@ export default function Home() {
               <p className="text-black">There are of Lorem Ipsum</p>
             </div>
           </div>
-          <div className="w-1/3">
+          <div className="lg:w-1/3">
             <Image
               src={criminalDefenseCasesServed}
               width={"33%"}
@@ -500,16 +505,19 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="bg-black/25 m-12 w-full h-[0.5px] mx-auto"></div>
+        <div className="hidden lg:block bg-black/25 m-12 w-full h-[0.5px] mx-auto"></div>
         <div>
-          <div className="flex justify-center gap-5" ref={partnersRef}>
+          <div
+            className="flex justify-center gap-5 mt-16 mx-auto lg:mt-[unset]"
+            ref={partnersRef}
+          >
             <Image
               src={separatorCentered}
               width={"50px"}
               height={"auto"}
               alt="separator"
             />
-            <h1 className="text-black text-4xl flex w-[20vw] text-center">
+            <h1 className="text-black text-4xl flex lg:w-[20vw] text-center">
               Meet The Partners
             </h1>
             <Image
@@ -519,13 +527,13 @@ export default function Home() {
               alt="separator"
             />
           </div>
-          <div className="flex w-full justify-around mt-8">
+          <div className="flex w-[90vw] lg:w-full justify-center md:justify-around mt-8 mx-auto">
             {isPartnersVisible && (
               <motion.div
                 variants={partnerVariants}
                 initial="hidden"
                 animate="show"
-                className="flex w-full justify-around my-8 items-center"
+                className="flex flex-col gap-8 md:gap-[unset] md:flex-row w-full md:justify-around my-8 items-center text-center"
               >
                 {partners.map((item, id) => (
                   <motion.div
@@ -533,7 +541,7 @@ export default function Home() {
                     variants={partnerVariants}
                     initial="hidden"
                     animate="show"
-                    className="mr-[50px]"
+                    className="md:mx-6 lg:mr-[50px]"
                   >
                     <Image
                       src={item.source}
@@ -548,21 +556,31 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="h-[180vh] py-[15vh] px-[15vh] relative flex justify-center items-center">
+      <section className="relative lg:h-[180vh] lg:py-[15vh] px-[5vw] lg:px-[15vh] flex justify-center">
         <div
-          className="absolute inset-0 flex justify-center items-center bg-cover bg-center z-0"
+          className="relative lg:absolute inset-0 flex justify-center items-center bg-cover bg-center z-0"
           style={{ backgroundImage: `url(${bgIllustration1.src})` }}
         >
-          <div className="flex justify-between gap-10 absolute mx-auto my-auto z-10 bg-darkBlue/85 px-12 py-24 ">
-            <div className="w-[370px] h-[758px]">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-10 lg:absolute lg:my-auto z-10 bg-darkBlue/85 lg:px-12 py-12 lg:py-24 ">
+            <div className="w-[90vw] mx-auto lg:mx-[unset] text-center lg:text-left lg:w-[370px] lg:h-[758px]">
               <h1 className="text-4xl mb-4">We Are Top Lawyers And History</h1>
-              <Image
-                src={separator}
-                width={"auto"}
-                height={"auto"}
-                alt="separator"
-                className="mb-12"
-              />
+              {isMobile ? (
+                <Image
+                  src={separatorCentered}
+                  width={"auto"}
+                  height={"auto"}
+                  alt="separator"
+                  className="mb-12 mx-auto"
+                />
+              ) : (
+                <Image
+                  src={separator}
+                  width={"auto"}
+                  height={"auto"}
+                  alt="separator"
+                  className="my-8"
+                />
+              )}
               <div className="flex flex-col gap-12">
                 <div className="flex flex-col justify-between">
                   <p className="text-camel mb-3 font-semibold">
@@ -602,25 +620,42 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Image
-              src={balanceStatue}
-              width={"auto"}
-              height={758}
-              alt="separator"
-              className="my-2"
-            />
-            <div className="w-[430px] h-[758px]">
-              <h1 className="text-4xl mb-4 w-[300px] ">
+            {isMobile ? (
+              <Image
+                src={balanceStatueMobile}
+                alt="statue-image"
+                className="my-12 w-[90vw] mx-auto "
+              />
+            ) : (
+              <Image
+                src={balanceStatue}
+                alt="statue-image"
+                className="my-2 w-[90vw] mx-auto h-[758px] w-auto"
+              />
+            )}
+            <div className="w-[90vw] lg:w-[430px] h-[758px]">
+              <h1 className="text-4xl mb-4 w-[300px] mx-auto text-center lg:text-left lg:mx-[unset] ">
                 We Are Specialised And Experienced
               </h1>
-              <Image
-                src={separator}
-                width={"50px"}
-                height={"auto"}
-                alt="separator"
-                className="mb-12"
-              />
-              <p className="mb-16">
+              {isMobile ? (
+                <Image
+                  src={separatorCentered}
+                  width={"50px"}
+                  height={"auto"}
+                  alt="separator"
+                  className="mb-12 mx-auto"
+                />
+              ) : (
+                <Image
+                  src={separator}
+                  width={"50px"}
+                  height={"auto"}
+                  alt="separator"
+                  className="mb-12"
+                />
+              )}
+
+              <p className="mb-16 text-center mx-auto lg:text-left lg:mx-[unset]">
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                 blanditiis praesentium deleniti atque corrupti quos molestias
                 excepturi odio dignissimos ducimus qui blanditiis sint occaecati
@@ -679,15 +714,19 @@ export default function Home() {
                     className="mb-16"
                   />
                 </div>
-                <div className="camel-button">Free Consulting</div>
+                <div className="camel-button mx-auto lgmx-[unset]">
+                  Free Consulting
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-darkBlue px-[10vw] py-[15vh] flex flex-col justify-center items-center">
+      <section className="bg-darkBlue lg:px-[10vw] py-[5vh] lg:py-[15vh] flex flex-col justify-center items-center">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-4xl mb-4">Client Opinions & Reviews</h1>
+          <h1 className="text-4xl mb-4 text-center lg:text-left mx-auto lg:mx-[unset]">
+            Client Opinions & Reviews
+          </h1>
           <Image
             src={separatorCentered}
             width={"50px"}
@@ -696,8 +735,8 @@ export default function Home() {
             className="mb-12"
           />
         </div>
-        <div className="flex justify-between gap-4 w-full">
-          <div className="flex flex-col gap-4 w-1/4">
+        <div className="flex flex-col md:flex-row flex-wrap lg:flex-nowrap mx-auto lg:mx-[unset] lg:justify-between gap-12 lg:gap-4 lg:gap-4 w-[90vw] lg:w-full">
+          <div className="flex flex-col-reverse lg:flex-col gap-4 w-[90vw] md:w-[40%] lg:w-1/4">
             <div className="bg-cyan py-10 px-8 rounded-bl-[40px]">
               <Image
                 src={quotes}
@@ -725,7 +764,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4 w-1/4">
+          <div className="flex flex-col gap-4 w-[90vw] md:w-[40%] lg:w-1/4">
             <div className="flex gap-4 items-center">
               <Image
                 src={minciPall}
@@ -753,7 +792,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col gap-4 w-1/4">
+          <div className="flex flex-col-reverse lg:flex-col gap-4 w-[90vw] md:w-[40%] lg:w-1/4">
             <div className="bg-cyan py-10 px-8 rounded-bl-[40px]">
               <Image
                 src={quotes}
@@ -781,7 +820,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4 w-1/4">
+          <div className="flex flex-col gap-4 w-[90vw] md:w-[40%] lg:w-1/4">
             <div className="flex gap-4 items-center">
               <Image
                 src={johnDavid}
@@ -832,30 +871,30 @@ export default function Home() {
                   height={"auto"}
                   alt="logo"
                 />
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-6 bg-white">
-                  <div className="flex justify-center gap-6 px-4">
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 py-6 bg-white">
+                  <div className="flex justify-center gap-4 px-4 z-40">
                     <Image
-                      src={instagram}
-                      width={"auto"}
-                      height={"auto"}
+                      src={instagramBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={facebook}
-                      width={"auto"}
-                      height={"auto"}
+                      src={facebookBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={twitter}
-                      width={"auto"}
-                      height={"auto"}
+                      src={twitterBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={pinterest}
-                      width={"auto"}
-                      height={"auto"}
+                      src={pinterestBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                   </div>
@@ -875,30 +914,30 @@ export default function Home() {
                   height={"auto"}
                   alt="logo"
                 />
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-6 bg-white">
-                  <div className="flex justify-center gap-6 px-4">
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 py-6 bg-white">
+                  <div className="flex justify-center gap-4 px-4">
                     <Image
-                      src={instagram}
-                      width={"auto"}
-                      height={"auto"}
+                      src={instagramBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={facebook}
-                      width={"auto"}
-                      height={"auto"}
+                      src={facebookBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={twitter}
-                      width={"auto"}
-                      height={"auto"}
+                      src={twitterBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={pinterest}
-                      width={"auto"}
-                      height={"auto"}
+                      src={pinterestBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                   </div>
@@ -918,30 +957,30 @@ export default function Home() {
                   height={"auto"}
                   alt="logo"
                 />
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-6 bg-white">
-                  <div className="flex justify-center gap-6 px-4">
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 py-6 bg-white">
+                  <div className="flex justify-center gap-4 px-4">
                     <Image
-                      src={instagram}
-                      width={"auto"}
-                      height={"auto"}
+                      src={instagramBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={facebook}
-                      width={"auto"}
-                      height={"auto"}
+                      src={facebookBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={twitter}
-                      width={"auto"}
-                      height={"auto"}
+                      src={twitterBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={pinterest}
-                      width={"auto"}
-                      height={"auto"}
+                      src={pinterestBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                   </div>
