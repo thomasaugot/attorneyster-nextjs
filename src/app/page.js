@@ -49,6 +49,10 @@ import instagram from "@/assets/img/homepage/instagram.svg";
 import facebook from "@/assets/img/homepage/facebook.svg";
 import twitter from "@/assets/img/homepage/twitter.svg";
 import pinterest from "@/assets/img/homepage/pinterest.svg";
+import instagramBlack from "@/assets/img/homepage/InstaBlack.jpg";
+import facebookBlack from "@/assets/img/homepage/FbBlack.svg";
+import twitterBlack from "@/assets/img/homepage/Twiterblack.png";
+import pinterestBlack from "@/assets/img/homepage/Pintrestblack.png";
 import call from "@/assets/img/homepage/Call.png";
 import bgillu2 from "@/assets/img/homepage/bg-illu-2.svg";
 import writingHand from "@/assets/img/homepage/writing-hand.svg";
@@ -443,9 +447,9 @@ export default function Home() {
           </motion.div>
         )}
       </section>
-      <section className="h-full bg-white py-[15vh] px-[15vh]">
+      <section className="h-full bg-white py-12 lg:py-[15vh] lg:px-[15vh]">
         <div>
-          <h1 className="text-black text-4xl flex mx-auto w-[20vw] text-center">
+          <h1 className="text-black text-4xl flex mx-auto justify-center w-[90vw] xl:w-[25vw] text-center">
             If you're in trouble we can help.
           </h1>
           <Image
@@ -455,14 +459,14 @@ export default function Home() {
             alt="separator"
             className="mx-auto mt-4"
           />
-          <p className="flex mx-auto w-[45vw] text-center my-[47px] font-outfit text-darkGrey dropshadow">
+          <p className="flex mx-auto w-[90vw] lg:w-[45vw] text-center my-6 lg:my-[47px] font-outfit text-darkGrey dropshadow">
             There are of Lorem Ipsum available, but the majority have su
             alteration in some form, by injected humour, oir which don't look
             even slightly believable.
           </p>
         </div>
-        <div className="flex justify-between gap-5">
-          <div className="flex bg-cream p-[30px] gap-4 w-1/3">
+        <div className="flex flex-col lg:flex-row lg:mx-[unset] justify-center items-center lg:justify-between gap-5">
+          <div className="flex bg-cream p-[30px] gap-4 md:w-1/2 lg:w-1/3">
             <Image
               src={trustedClients}
               width={"auto"}
@@ -476,7 +480,7 @@ export default function Home() {
               <p className="text-black">There are of Lorem Ipsum</p>
             </div>
           </div>
-          <div className="flex bg-cream p-[30px] gap-4 w-1/3">
+          <div className="flex bg-cream p-[30px] gap-4 md:w-1/2 lg:w-1/3">
             <Image
               src={successfulCases}
               width={"auto"}
@@ -490,7 +494,7 @@ export default function Home() {
               <p className="text-black">There are of Lorem Ipsum</p>
             </div>
           </div>
-          <div className="w-1/3">
+          <div className="lg:w-1/3">
             <Image
               src={criminalDefenseCasesServed}
               width={"33%"}
@@ -500,16 +504,19 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="bg-black/25 m-12 w-full h-[0.5px] mx-auto"></div>
+        <div className="hidden lg:block bg-black/25 m-12 w-full h-[0.5px] mx-auto"></div>
         <div>
-          <div className="flex justify-center gap-5" ref={partnersRef}>
+          <div
+            className="flex justify-center gap-5 mt-16 mx-auto lg:mt-[unset]"
+            ref={partnersRef}
+          >
             <Image
               src={separatorCentered}
               width={"50px"}
               height={"auto"}
               alt="separator"
             />
-            <h1 className="text-black text-4xl flex w-[20vw] text-center">
+            <h1 className="text-black text-4xl flex lg:w-[20vw] text-center">
               Meet The Partners
             </h1>
             <Image
@@ -519,13 +526,13 @@ export default function Home() {
               alt="separator"
             />
           </div>
-          <div className="flex w-full justify-around mt-8">
+          <div className="flex w-[90vw] lg:w-full justify-center md:justify-around mt-8 mx-auto">
             {isPartnersVisible && (
               <motion.div
                 variants={partnerVariants}
                 initial="hidden"
                 animate="show"
-                className="flex w-full justify-around my-8 items-center"
+                className="flex flex-col gap-8 md:gap-[unset] md:flex-row w-full md:justify-around my-8 items-center text-center"
               >
                 {partners.map((item, id) => (
                   <motion.div
@@ -533,7 +540,7 @@ export default function Home() {
                     variants={partnerVariants}
                     initial="hidden"
                     animate="show"
-                    className="mr-[50px]"
+                    className="md:mx-6 lg:mr-[50px]"
                   >
                     <Image
                       src={item.source}
@@ -832,30 +839,30 @@ export default function Home() {
                   height={"auto"}
                   alt="logo"
                 />
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-6 bg-white">
-                  <div className="flex justify-center gap-6 px-4">
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 py-6 bg-white">
+                  <div className="flex justify-center gap-4 px-4 z-40">
                     <Image
-                      src={instagram}
-                      width={"auto"}
-                      height={"auto"}
+                      src={instagramBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={facebook}
-                      width={"auto"}
-                      height={"auto"}
+                      src={facebookBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={twitter}
-                      width={"auto"}
-                      height={"auto"}
+                      src={twitterBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={pinterest}
-                      width={"auto"}
-                      height={"auto"}
+                      src={pinterestBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                   </div>
@@ -875,30 +882,30 @@ export default function Home() {
                   height={"auto"}
                   alt="logo"
                 />
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-6 bg-white">
-                  <div className="flex justify-center gap-6 px-4">
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 py-6 bg-white">
+                  <div className="flex justify-center gap-4 px-4">
                     <Image
-                      src={instagram}
-                      width={"auto"}
-                      height={"auto"}
+                      src={instagramBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={facebook}
-                      width={"auto"}
-                      height={"auto"}
+                      src={facebookBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={twitter}
-                      width={"auto"}
-                      height={"auto"}
+                      src={twitterBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={pinterest}
-                      width={"auto"}
-                      height={"auto"}
+                      src={pinterestBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                   </div>
@@ -918,30 +925,30 @@ export default function Home() {
                   height={"auto"}
                   alt="logo"
                 />
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-6 bg-white">
-                  <div className="flex justify-center gap-6 px-4">
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 py-6 bg-white">
+                  <div className="flex justify-center gap-4 px-4">
                     <Image
-                      src={instagram}
-                      width={"auto"}
-                      height={"auto"}
+                      src={instagramBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={facebook}
-                      width={"auto"}
-                      height={"auto"}
+                      src={facebookBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={twitter}
-                      width={"auto"}
-                      height={"auto"}
+                      src={twitterBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                     <Image
-                      src={pinterest}
-                      width={"auto"}
-                      height={"auto"}
+                      src={pinterestBlack}
+                      width={20}
+                      height={20}
                       alt="portait"
                     />
                   </div>
