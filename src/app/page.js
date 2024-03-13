@@ -34,6 +34,7 @@ import natureHome from "@/assets/img/homepage/naturehome-logo.svg";
 import classicDesign from "@/assets/img/homepage/classic-design-logo.svg";
 import bgIllustration1 from "@/assets/img/homepage/bg-illu-1.svg";
 import balanceStatue from "@/assets/img/homepage/balance-statue.svg";
+import balanceStatueMobile from "@/assets/img/homepage/balance-statue-mobile.png";
 import diagram75 from "@/assets/img/homepage/diagram75.png";
 import diagram80 from "@/assets/img/homepage/diagram80.png";
 import diagram90 from "@/assets/img/homepage/diagram90.png";
@@ -555,21 +556,31 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="h-[180vh] py-[15vh] px-[15vh] relative flex justify-center items-center">
+      <section className="relative lg:h-[180vh] lg:py-[15vh] px-[5vw] lg:px-[15vh] flex justify-center">
         <div
-          className="absolute inset-0 flex justify-center items-center bg-cover bg-center z-0"
+          className="relative lg:absolute inset-0 flex justify-center items-center bg-cover bg-center z-0"
           style={{ backgroundImage: `url(${bgIllustration1.src})` }}
         >
-          <div className="flex justify-between gap-10 absolute mx-auto my-auto z-10 bg-darkBlue/85 px-12 py-24 ">
-            <div className="w-[370px] h-[758px]">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-10 lg:absolute lg:my-auto z-10 bg-darkBlue/85 lg:px-12 py-12 lg:py-24 ">
+            <div className="w-[90vw] mx-auto lg:mx-[unset] text-center lg:text-left lg:w-[370px] lg:h-[758px]">
               <h1 className="text-4xl mb-4">We Are Top Lawyers And History</h1>
-              <Image
-                src={separator}
-                width={"auto"}
-                height={"auto"}
-                alt="separator"
-                className="mb-12"
-              />
+              {isMobile ? (
+                <Image
+                  src={separatorCentered}
+                  width={"auto"}
+                  height={"auto"}
+                  alt="separator"
+                  className="mb-12 mx-auto"
+                />
+              ) : (
+                <Image
+                  src={separator}
+                  width={"auto"}
+                  height={"auto"}
+                  alt="separator"
+                  className="my-8"
+                />
+              )}
               <div className="flex flex-col gap-12">
                 <div className="flex flex-col justify-between">
                   <p className="text-camel mb-3 font-semibold">
@@ -609,25 +620,42 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Image
-              src={balanceStatue}
-              width={"auto"}
-              height={758}
-              alt="separator"
-              className="my-2"
-            />
-            <div className="w-[430px] h-[758px]">
-              <h1 className="text-4xl mb-4 w-[300px] ">
+            {isMobile ? (
+              <Image
+                src={balanceStatueMobile}
+                alt="statue-image"
+                className="my-12 w-[90vw] mx-auto "
+              />
+            ) : (
+              <Image
+                src={balanceStatue}
+                alt="statue-image"
+                className="my-2 w-[90vw] mx-auto h-[758px] w-auto"
+              />
+            )}
+            <div className="w-[90vw] lg:w-[430px] h-[758px]">
+              <h1 className="text-4xl mb-4 w-[300px] mx-auto text-center lg:text-left lg:mx-[unset] ">
                 We Are Specialised And Experienced
               </h1>
-              <Image
-                src={separator}
-                width={"50px"}
-                height={"auto"}
-                alt="separator"
-                className="mb-12"
-              />
-              <p className="mb-16">
+              {isMobile ? (
+                <Image
+                  src={separatorCentered}
+                  width={"50px"}
+                  height={"auto"}
+                  alt="separator"
+                  className="mb-12 mx-auto"
+                />
+              ) : (
+                <Image
+                  src={separator}
+                  width={"50px"}
+                  height={"auto"}
+                  alt="separator"
+                  className="mb-12"
+                />
+              )}
+
+              <p className="mb-16 text-center mx-auto lg:text-left lg:mx-[unset]">
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                 blanditiis praesentium deleniti atque corrupti quos molestias
                 excepturi odio dignissimos ducimus qui blanditiis sint occaecati
@@ -686,15 +714,19 @@ export default function Home() {
                     className="mb-16"
                   />
                 </div>
-                <div className="camel-button">Free Consulting</div>
+                <div className="camel-button mx-auto lgmx-[unset]">
+                  Free Consulting
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-darkBlue px-[10vw] py-[15vh] flex flex-col justify-center items-center">
+      <section className="bg-darkBlue lg:px-[10vw] py-[5vh] lg:py-[15vh] flex flex-col justify-center items-center">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-4xl mb-4">Client Opinions & Reviews</h1>
+          <h1 className="text-4xl mb-4 text-center lg:text-left mx-auto lg:mx-[unset]">
+            Client Opinions & Reviews
+          </h1>
           <Image
             src={separatorCentered}
             width={"50px"}
@@ -703,8 +735,8 @@ export default function Home() {
             className="mb-12"
           />
         </div>
-        <div className="flex justify-between gap-4 w-full">
-          <div className="flex flex-col gap-4 w-1/4">
+        <div className="flex flex-col md:flex-row flex-wrap lg:flex-nowrap mx-auto lg:mx-[unset] lg:justify-between gap-12 lg:gap-4 lg:gap-4 w-[90vw] lg:w-full">
+          <div className="flex flex-col-reverse lg:flex-col gap-4 w-[90vw] md:w-[40%] lg:w-1/4">
             <div className="bg-cyan py-10 px-8 rounded-bl-[40px]">
               <Image
                 src={quotes}
@@ -732,7 +764,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4 w-1/4">
+          <div className="flex flex-col gap-4 w-[90vw] md:w-[40%] lg:w-1/4">
             <div className="flex gap-4 items-center">
               <Image
                 src={minciPall}
@@ -760,7 +792,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col gap-4 w-1/4">
+          <div className="flex flex-col-reverse lg:flex-col gap-4 w-[90vw] md:w-[40%] lg:w-1/4">
             <div className="bg-cyan py-10 px-8 rounded-bl-[40px]">
               <Image
                 src={quotes}
@@ -788,7 +820,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4 w-1/4">
+          <div className="flex flex-col gap-4 w-[90vw] md:w-[40%] lg:w-1/4">
             <div className="flex gap-4 items-center">
               <Image
                 src={johnDavid}
