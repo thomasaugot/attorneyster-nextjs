@@ -21,7 +21,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-darkBlue px-[10vw] py-[15vh] flex flex-col">
+    <footer className="bg-darkBlue px-[5vw] lg:px-[10vw] py-[5vh] lg:py-[15vh] flex flex-col">
       <div className="flex gap-6 justify-center">
         <Image
           src={separatorLeft}
@@ -37,8 +37,8 @@ export const Footer = () => {
           alt="separator"
         />
       </div>
-      <div className="flex flex-wrap justify-between my-24">
-        <div className="w-auto">
+      <div className="flex flex-col md:flex-row flex-wrap justify-between my-12 md:my-24">
+        <div className="w-full md:w-[47%] lg:w-auto flex flex-col items-center md:items-start md:w-auto mx-auto md:mx-[unset]">
           <div className="w-full h-[1px] bg-white/25 my-4"></div>
           <h1 className="text-2xl">Quick Links</h1>
           <div className="w-full h-[1px] bg-white/25 my-4"></div>
@@ -104,95 +104,105 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-        <div>
+        <div className="w-full md:w-[47%] lg:w-auto mx-auto md:mx-[unset] flex flex-col items-center md:items-start">
           <div className="w-full h-[1px] bg-white/25 my-4"></div>
           <h1 className="text-2xl">Utility Page</h1>
           <div className="w-full h-[1px] bg-white/25 my-4"></div>
           <ul>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 Start Here
               </Link>
             </li>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 Style Guide
               </Link>
             </li>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 404 Not Found
               </Link>
             </li>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 Password Protected
               </Link>
             </li>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 Licenses
               </Link>
             </li>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 Changelog
               </Link>
             </li>
           </ul>
         </div>
-        <div>
+        <div className="w-full md:w-[47%] lg:w-auto mx-auto md:mx-[unset] flex flex-col items-center md:items-start">
           <div className="w-full h-[1px] bg-white/25 my-4"></div>
           <h1 className="text-2xl">Practice Areas</h1>
           <div className="w-full h-[1px] bg-white/25 my-4"></div>
           <ul>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 Family Law
               </Link>
             </li>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 Criminal Law
               </Link>
             </li>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 Personal Injury
               </Link>
             </li>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 Real Estate Law
               </Link>
             </li>
-            <li>
+            <li className="text-center md:text-left">
               <Link href={"/"} className="hover:underline">
                 Business Law
               </Link>
             </li>
           </ul>
         </div>
-        <div>
+        <div className="w-full md:w-[47%] lg:w-auto mx-auto md:mx-[unset] flex flex-col items-center md:items-start">
           <div className="w-full h-[1px] bg-white/25 my-4"></div>
           <h1 className="text-2xl">Contact Us</h1>
           <div className="w-full h-[1px] bg-white/25 my-4"></div>
           <ul>
-            <li>Head Office Address 121 King Street,</li>
-            <li>Melbourne West,Australia</li>
+            <li className="text-center md:text-left">
+              Head Office Address 121 King Street,
+            </li>
+            <li className="text-center md:text-left">
+              Melbourne West,Australia
+            </li>
             <br />
-            <li className="cursor-pointer" onClick={handlePhoneClick}>
+            <li
+              className="cursor-pointer text-center md:text-left"
+              onClick={handlePhoneClick}
+            >
               Phone: (011) 9876 54321
             </li>
-            <li className="cursor-pointer" onClick={handleEmailClick}>
+            <li
+              className="cursor-pointer text-center md:text-left"
+              onClick={handleEmailClick}
+            >
               Email: info@example.com
             </li>
           </ul>
         </div>
       </div>
       <div className="w-full h-[1px] bg-white/25 mb-6"></div>
-      <div className="flex justify-between">
-        <p>
+      <div className="flex flex-col md:flex-row justify-between">
+        <p className="w-[80%] mx-auto md:mx-[unset] text-center md:text-left md:w-[60%] lg:w-auto">
           Copyright © <span className="text-camel">Attorney Law</span> |
           Designed by <span className="text-camel">VictorFlow</span> Templates -
           Coded by{" "}
@@ -202,7 +212,7 @@ export const Footer = () => {
             </span>
           </Link>
         </p>
-        <div className="flex flex justify-center gap-6 px-4">
+        <div className="flex flex justify-center gap-6 px-4 mt-8 md:mt-[unset] ">
           <p className="text-camel">Follow : </p>
           <Link href={"/"}>
             <Image

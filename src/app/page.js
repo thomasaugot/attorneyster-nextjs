@@ -1000,26 +1000,28 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-darkBlue px-[10vw] py-[15vh]">
-        <div className="flex mx-auto my-auto flex justify-center items-center">
-          <div className="flex flex-col gap-6 w-1/2 h-auto">
-            <h1 className="text-white font-bold text-3xl w-[402px] text-left">
+      <section className="bg-darkBlue lg:px-[10vw] py-[5vh] lg:py-[15vh]">
+        <div className="flex mx-auto lg:my-auto flex-col lg:flex-row justify-center items-center">
+          <div className="flex flex-col gap-6 w-[90vw] mx-auto lg:mx-[unset] lg:w-1/2 h-auto">
+            <h1 className="text-white font-bold text-3xl mx-auto lg:mx-[unset] text-center lg:text-left w-[85vw] lg:w-[402px]">
               Our Expert professional law team is always ready to serve you the
               best solution!
             </h1>
-            <p className="text-white w-[400px] text-left">
+            <p className="text-white w-[90vw] lg:w-[400px] text-center lg:text-left">
               There are of Lorem Ipsum available, but the majority have su
               alteration in some form, by injected oir which don't look even
               slightly believable.
             </p>
-            <div className="camel-button">Contact Us</div>
+            <div className="camel-button mx-auto lg:mx-[unset] ">
+              Contact Us
+            </div>
           </div>
-          <div className="w-1/2 h-full bg-white h-auto flex justify-center items-center">
-            <div className="border-solid border-8 border-grey m-12 w-full h-[70%] py-8 px-4 flex flex-col gap-6">
-              <h1 className="text-black font-bold text-3xl w-[402px] text-left">
+          <div className="w-[90vw] lg:w-1/2 h-full bg-white h-auto flex justify-center items-center">
+            <div className="border-solid border-8 border-grey m-12 w-[80%] lg:w-full h-[80%] py-2 px-2 lg:py-8 lg:px-4 flex flex-col gap-6">
+              <h1 className="text-black font-bold text-3xl w-[90%] lg:w-[402px] text-center lg:text-left mx-auto lg:mx-[unset]">
                 Get a Free Consultation
               </h1>
-              <p className="text-black w-[400px] text-left">
+              <p className="text-black w-[95%] lg:w-[400px] text-center mx-auto lg:mx-[unset] lg:text-left">
                 There are of Lorem Ipsum available, but the majority by injected
                 humour which don't look even.
               </p>
@@ -1028,14 +1030,14 @@ export default function Home() {
                 width={"auto"}
                 height={"auto"}
                 alt="logo"
-                className="cursor-pointer"
+                className="cursor-pointer mx-auto lg:mx-[unset]"
               />
             </div>
           </div>
         </div>
       </section>
       <section
-        className="h-[120vh] py-[15vh] px-[15vh] relative flex justify-center items-center"
+        className="h-[120vh] md:h-[80vh] lg:h-[120vh] py-5 lg:py-[15vh] lg:px-[15vh] relative flex justify-center items-center"
         ref={formRef}
       >
         <div
@@ -1045,7 +1047,7 @@ export default function Home() {
           {isFormVisible && <HomepageForm />}
         </div>
       </section>
-      <section className="bg-darkBlue px-[10vw] py-[15vh]">
+      <section className="bg-darkBlue px-[5vw] lg:px-[10vw] py-[5vh] lg:py-[15vh]">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-4xl mb-4">Recent Blogs</h1>
           <Image
@@ -1056,17 +1058,17 @@ export default function Home() {
             className="mb-12"
           />
         </div>
-        <div className="flex gap-4 justify-between items-center">
+        <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
           <Image
             src={writingHand}
             alt="writingHand"
-            className="mr-[50px] w-1/2 h-auto"
+            className="md:mr-[50px] w-full md:w-1/2 h-auto"
           />
           <div className="flex flex-col gap-4">
             <p className="text-camel">
               Criminal Law, Kidnapping | Sunday, July 24, 2022{" "}
             </p>
-            <div className="w-full h-[1px] bg-white/25"></div>
+            <div className="w-full h-[1px] bg-white/25 hidden md:block"></div>
             <h1 className="text-2xl">
               An Independent Examination Of <br />
               Charity Accounts
@@ -1079,17 +1081,20 @@ export default function Home() {
             <Link
               href="#"
               passHref
-              className="text-camel underline decoration-camel"
+              className="text-camel underline decoration-camel mx-auto md:mx-[unset]"
             >
               Read More
             </Link>
           </div>
         </div>
-        <div className="my-24 w-full h-[1px] bg-white/25"></div>
+        <div className="my-12 md:my-24 w-full h-[1px] bg-white/25"></div>
         <div className="flex w-full flex-wrap	justify-between">
           {blogArticles.map((item) => {
             return (
-              <div key={item.id} className="flex flex-col gap-4 w-[32%] mb-16">
+              <div
+                key={item.id}
+                className="flex flex-col gap-4 w-[47%] md:w-[32%] mb-16"
+              >
                 <Image
                   src={item.img}
                   alt="article illustration"
@@ -1116,7 +1121,6 @@ export default function Home() {
           className="absolute inset-0 flex justify-center items-center bg-cover bg-center z-0 overflow-hidden"
           style={{ backgroundImage: `url(${bgIllustration3.src})` }}
         ></div>
-        //////
       </section>
     </main>
   );

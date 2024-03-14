@@ -71,12 +71,12 @@ const HomepageForm = () => {
       initial={{ rotateY: -180, rotateX: 30 }}
       animate={{ rotateY: 0, rotateX: 0 }}
       transition={{ duration: 1 }}
-      className="bg-darkBlue w-full mx-[15vw] py-[5vh] px-[7vw]"
+      className="bg-darkBlue w-full mx-[5vw] my-[5vh] lg:mx-[15vw] py-[5vh] px-[5vw] lg:px-[7vw]"
       onSubmit={sendMessage}
       action=""
     >
-      <div className="flex w-full justify-between gap-6">
-        <div className="m-4 w-1/2">
+      <div className="flex flex-col md:flex-row w-[90%] md:w-full justify-between gap-6 mb-6 md:mb-[unset] ">
+        <div className="m-4 w-full md:w-1/2">
           <input
             type="text"
             id="fullname"
@@ -86,7 +86,7 @@ const HomepageForm = () => {
             className="w-full placeholder-white focus:placeholder-white/50 font-outfit text-white bg-transparent border-b-[1px] py-2 focus:outline-none focus:border-b-[1px] focus:caret-white	"
           />
         </div>
-        <div className="m-4 w-1/2">
+        <div className="m-4 w-full md:w-1/2">
           <input
             type="text"
             id="email"
@@ -97,8 +97,8 @@ const HomepageForm = () => {
           />
         </div>
       </div>
-      <div className="flex w-full justify-between gap-6">
-        <div className="m-4 w-1/2">
+      <div className="flex flex-col md:flex-row w-[90%] md:w-full justify-between gap-6 mb-6 md:mb-[unset]">
+        <div className="m-4 w-full md:w-1/2">
           <input
             type="text"
             id="name"
@@ -108,7 +108,7 @@ const HomepageForm = () => {
             className="w-full placeholder-white focus:placeholder-white/50 font-outfit text-white bg-transparent border-b-[1px] py-2 focus:outline-none focus:border-b-[1px] focus:caret-white	"
           />
         </div>
-        <div className="m-4 w-1/2">
+        <div className="m-4 w-full md:w-1/2">
           <input
             type="text"
             id="name"
