@@ -1116,7 +1116,7 @@ export default function Home() {
           className="absolute inset-0 flex justify-center items-center bg-cover bg-center z-0 overflow-hidden"
           style={{ backgroundImage: `url(${bgIllustration3.src})` }}
         ></div>
-        ///
+        //////
       </section>
     </main>
   );
