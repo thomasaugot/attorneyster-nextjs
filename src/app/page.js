@@ -633,7 +633,7 @@ export default function Home() {
                 className="my-2 w-[90vw] mx-auto h-[758px] w-auto"
               />
             )}
-            <div className="w-[90vw] lg:w-[430px] h-[758px]">
+            <div className="w-[90vw] lg:w-[430px] h-[758px] p-4">
               <h1 className="text-4xl mb-4 w-[300px] mx-auto text-center lg:text-left lg:mx-[unset] ">
                 We Are Specialised And Experienced
               </h1>
@@ -724,7 +724,7 @@ export default function Home() {
       </section>
       <section className="bg-darkBlue lg:px-[10vw] py-[5vh] lg:py-[15vh] flex flex-col justify-center items-center">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-4xl mb-4 text-center lg:text-left mx-auto lg:mx-[unset]">
+          <h1 className="text-4xl mb-4 text-center max-w-[85vw] lg:text-left mx-auto lg:mx-[unset]">
             Client Opinions & Reviews
           </h1>
           <Image
@@ -735,7 +735,7 @@ export default function Home() {
             className="mb-12"
           />
         </div>
-        <div className="flex flex-col md:flex-row flex-wrap lg:flex-nowrap mx-auto lg:mx-[unset] lg:justify-between gap-12 lg:gap-4 lg:gap-4 w-[90vw] lg:w-full">
+        <div className="flex flex-col justify-center md:flex-row flex-wrap lg:flex-nowrap mx-auto lg:mx-[unset] lg:justify-between gap-12 lg:gap-4 lg:gap-4 w-[90vw] lg:w-full">
           <div className="flex flex-col-reverse lg:flex-col gap-4 w-[90vw] md:w-[40%] lg:w-1/4">
             <div className="bg-cyan py-10 px-8 rounded-bl-[40px]">
               <Image
@@ -777,7 +777,7 @@ export default function Home() {
                 <p className="text-lg">Consultant</p>
               </div>
             </div>
-            <div className="bg-cyan py-10 px-8 rounded-tl-[40px]">
+            <div className="bg-cyan py-10 px-8 rounded-bl-[40px] md:rounded-bl-[unset] md:rounded-tl-[40px]">
               <Image
                 src={quotes}
                 width={"auto"}
@@ -833,7 +833,7 @@ export default function Home() {
                 <p className="text-lg">Designer</p>
               </div>
             </div>
-            <div className="bg-cyan py-10 px-8 rounded-tl-[40px]">
+            <div className="bg-cyan py-10 px-8 rounded-bl-[40px] md:rounded-bl-[unset] md:rounded-tl-[40px]">
               <Image
                 src={quotes}
                 width={"auto"}
@@ -850,9 +850,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-white px-[10vw] py-[15vh]">
+      <section className="bg-white lg:px-[10vw] py-[5vh] lg:py-[15vh]">
         <div className="flex flex-col mx-auto my-auto">
-          <h1 className="text-black flex mx-auto font-bold text-3xl w-[402px] text-center">
+          <h1 className="text-black flex mx-auto font-bold text-3xl w-[90vw] lg:w-[402px] text-center">
             Our Experienced Attorneys Are Ready To answer any questions
           </h1>
           <Image
@@ -863,7 +863,7 @@ export default function Home() {
             className="my-4 mx-auto"
           />
           <div className="flex flex-col mx-auto mt-6">
-            <div className="flex justify-between gap-4">
+            <div className="flex flex-col lg:flex-row justify-between gap-28 lg:gap-4 m-4">
               <div className="relative">
                 <Image
                   src={nikolona}
