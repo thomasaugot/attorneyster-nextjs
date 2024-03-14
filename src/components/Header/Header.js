@@ -55,21 +55,21 @@ export const Header = () => {
             className="fixed flex flex-col justify-center items-center z-50 mr-2 top-10 right-4 lg:hidden"
           >
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-1 md:h2 w-10 md:w-16 lg:10 rounded-sm ${
+              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 rounded-sm ${
                 isOpen
-                  ? "rotate-45 translate-y-2 md:translate-y-4"
+                  ? "rotate-45 translate-y-2 md:translate-y-2"
                   : "-translate-y-1"
               }`}
             ></span>
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-1 md:h2 w-10 md:w-16 lg:10 rounded-sm my-1 md:my-3 ${
+              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 rounded-sm my-1 ${
                 isOpen ? "opacity-0" : "opacity-100"
               }`}
             ></span>
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-1 md:h2 w-10 md:w-16 lg:10 rounded-sm ${
+              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 rounded-sm ${
                 isOpen
-                  ? "-rotate-45 -translate-y-2 md:-translate-y-4"
+                  ? "-rotate-45 -translate-y-2 md:-translate-y-2"
                   : "translate-y-1"
               }`}
             ></span>
@@ -87,25 +87,25 @@ export const Header = () => {
               <div className="flex flex-col justify-left gap-10 md:gap-12">
                 <Link
                   href={"/"}
-                  className="text-xl md:text-3xl font-outfit text-white hover:underline underline-offset-4"
+                  className="text-xl font-outfit text-white hover:underline underline-offset-4"
                 >
                   Home
                 </Link>
                 <Link
                   href={"/"}
-                  className="text-xl md:text-3xl font-outfit text-white  hover:underline underline-offset-4"
+                  className="text-xl font-outfit text-white  hover:underline underline-offset-4"
                 >
                   About Us
                 </Link>
                 <button
-                  className="text-xl md:text-3xl font-outfit text-white  hover:underline flex items-end	underline-offset-4"
+                  className="text-xl font-outfit text-white  hover:underline flex items-end	underline-offset-4"
                   onClick={toggleSubMenu}
                 >
                   Pages&nbsp; <IoChevronDown size={20} />
                 </button>
                 <Link
                   href={"/"}
-                  className="text-xl md:text-3xl font-outfit text-white hover:underline underline-offset-4"
+                  className="text-xl font-outfit text-white hover:underline underline-offset-4"
                 >
                   Contact Us
                 </Link>
@@ -121,7 +121,7 @@ export const Header = () => {
               </div>
               <Link
                 href={"/"}
-                className="text-xl md:text-3xl font-outfit p-4 md:p-8 text-white blurred-button hover:scale-90"
+                className="text-xl font-outfit p-4 md:p-8 text-white blurred-button hover:scale-90"
               >
                 Book a Consultation
               </Link>
